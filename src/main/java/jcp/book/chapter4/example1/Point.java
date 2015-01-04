@@ -1,4 +1,4 @@
-package chapter4.example1;
+package jcp.book.chapter4.example1;
 
 /**
  * Immutable Point

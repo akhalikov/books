@@ -1,4 +1,4 @@
-package chapter4.example1;
+package jcp.book.chapter4.example1;
 
 /**
  * Created by artur on 03.01.15.
