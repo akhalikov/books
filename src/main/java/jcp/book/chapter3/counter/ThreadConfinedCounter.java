@@ -1,4 +1,4 @@
-package jcp.book.chapter3;
+package jcp.book.chapter3.counter;
 
 import jcp.book.ThreadRunner;
 

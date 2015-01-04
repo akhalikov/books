@@ -1,20 +1,20 @@
-package jcp.book.chapter3;
+package jcp.book.chapter3.counter;
 
 import jcp.book.ThreadRunner;
 
 import static org.junit.Assert.assertEquals;
 
 /**
+ * Synchronized UnsafeCounter
+ *
  * Created by artur on 04.01.15.
  */
-public class SafeCounterExample1 {
+public class SafeCounterExample2 {
 
     private static final int EXECUTIONS_COUNT = 10;
     private static final int THREADS_COUNT = 50;
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Safe Counter Example #1");
-
         for (int i = 0; i < EXECUTIONS_COUNT; i++)
             execute(i);
     }
@@ -31,12 +31,17 @@ public class SafeCounterExample1 {
     }
 
     private static class MyRunnable implements Runnable {
-        private Counter counter = new SafeCounter();
+        private Counter counter = new UnsafeCounter();
 
         @Override
         public void run() {
-            // Safe operation since increment is synchronized
-            counter.increment();
+
+            // atomic write and read
+            synchronized (this) {
+                counter.increment();
+                System.out.println(Thread.currentThread().getName()
+                        + " [" + counter + "] value=" + counter.getValue());
+            }
         }
     }
 }

@@ -1,22 +1,19 @@
-package jcp.book.chapter3;
+package jcp.book.chapter3.counter;
 
 import jcp.book.ThreadRunner;
 
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unsafe counter example #1: example of how using of non-atomic increment
- * from multiple threads may cause inconsistent state of shared variable
- *
  * Created by artur on 04.01.15.
  */
-public class UnsafeCounterExample1 {
+public class SafeCounterExample1 {
 
-    private static final int EXECUTIONS_COUNT = 30;
-    private static final int THREADS_COUNT = 100;
+    private static final int EXECUTIONS_COUNT = 10;
+    private static final int THREADS_COUNT = 50;
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Unsafe Counter Example #1: start");
+        System.out.println("Safe Counter Example #1");
 
         for (int i = 0; i < EXECUTIONS_COUNT; i++)
             execute(i);
@@ -34,11 +31,11 @@ public class UnsafeCounterExample1 {
     }
 
     private static class MyRunnable implements Runnable {
-        private Counter counter = new UnsafeCounter();
+        private Counter counter = new SafeCounter();
 
         @Override
         public void run() {
-            // Not safe (non-atomic) increment
+            // Safe operation since increment is synchronized
             counter.increment();
         }
     }
