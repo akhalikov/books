@@ -1,5 +1,7 @@
 package jcp.book.chapter5.latch;
 
+import jcp.book.ThreadHelper;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -8,14 +10,8 @@ import java.util.concurrent.CountDownLatch;
 public class TestHarness {
 
     public static void main(String[] args) throws Exception {
-        Runnable r = () -> {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
-        System.out.println(timeTask(4, r));
+        System.out.println(
+                timeTask(4, () -> ThreadHelper.sleepSeconds(4)));
     }
 
     public static long timeTask(int nThreads, final Runnable task)

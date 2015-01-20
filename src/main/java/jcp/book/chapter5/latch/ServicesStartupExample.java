@@ -1,5 +1,7 @@
 package jcp.book.chapter5.latch;
 
+import jcp.book.ThreadHelper;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -12,18 +14,16 @@ public class ServicesStartupExample {
         final CountDownLatch latch = new CountDownLatch(SERVICES_NUM);
 
         Service[] services = new Service[] {
-                new Service("CacheService", 2000, latch),
-                new Service("VerificationService", 1000, latch),
-                new Service("ExportService", 5000, latch)
+                new Service("CacheService", 2, latch),
+                new Service("VerificationService", 1, latch),
+                new Service("ExportService", 5, latch)
         };
         for (Service service: services) {
-            new Thread(() -> {
-                service.startUp();
-            }).start();
+            new Thread(() -> service.startUp()).start();
         }
 
         // waiting for all services to start
-        // the main thread will wait until countdown of latch reaches 0
+        // the main thread will sleepSeconds until countdown of latch reaches 0
         System.out.println("Waiting for services to start...");
         try {
             latch.await();
@@ -39,22 +39,17 @@ public class ServicesStartupExample {
      */
     static class Service {
         private final String name;
-        private final int timeToStartMs;
+        private final int timeToStartSec;
         private final CountDownLatch latch;
 
-        public Service(String name, int timeToStartMs, CountDownLatch latch) {
+        public Service(String name, int timeToStartSec, CountDownLatch latch) {
             this.name = name;
-            this.timeToStartMs = timeToStartMs;
+            this.timeToStartSec = timeToStartSec;
             this.latch = latch;
         }
 
         public void startUp() {
-            try {
-                Thread.sleep(timeToStartMs);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
+            ThreadHelper.sleepSeconds(timeToStartSec);
             System.out.println(name + " is up");
             latch.countDown();
         }
