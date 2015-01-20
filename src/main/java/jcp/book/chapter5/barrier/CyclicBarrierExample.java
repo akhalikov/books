@@ -14,7 +14,6 @@ import java.util.concurrent.TimeoutException;
 public class CyclicBarrierExample {
     static final int THREADS_NUM = 4;
     static final int MAX_SECONDS = 20;
-    static final int MS_IN_SECOND = 1000;
     static final Random rand = new Random();
 
     public static void main(String[] args) {
