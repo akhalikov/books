@@ -13,7 +13,7 @@ import java.util.concurrent.BlockingQueue;
  *
  * Created by artur on 20.01.15.
  */
-public class BlockingQueueExample {
+public class ArrayBlockingQueueExample {
     public static void main(String[] args) {
         BlockingQueue queue = new ArrayBlockingQueue(1024);
         Producer producer = new Producer(queue);
