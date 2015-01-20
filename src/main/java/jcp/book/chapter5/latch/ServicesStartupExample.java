@@ -17,7 +17,9 @@ public class ServicesStartupExample {
                 new Service("ExportService", 5000, latch)
         };
         for (Service service: services) {
-            new Thread(service).start();
+            new Thread(() -> {
+                service.startUp();
+            }).start();
         }
 
         // waiting for all services to start
@@ -35,7 +37,7 @@ public class ServicesStartupExample {
     /**
      * Generic service that count downs the latch when starting
      */
-    static class Service implements Runnable {
+    static class Service {
         private final String name;
         private final int timeToStartMs;
         private final CountDownLatch latch;
@@ -46,8 +48,7 @@ public class ServicesStartupExample {
             this.latch = latch;
         }
 
-        @Override
-        public void run() {
+        public void startUp() {
             try {
                 Thread.sleep(timeToStartMs);
             } catch (InterruptedException e) {
