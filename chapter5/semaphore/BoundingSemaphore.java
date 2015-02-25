@@ -8,6 +8,12 @@ import java.util.concurrent.Semaphore;
 /**
  * Using Semaphore to bound a collection
  *
+ * Using semaphore in such manner turns collection into a blocking
+ * bounded collection. Bound plays role of maximum size of a collection.
+ * Underlying Set implementation knows nothing about the bound.
+ * If number of elements added (permits acquired) exceeds the bound,
+ * acquire blocks until some element si removed (permit released).
+ *
  * Created by artur on 25.02.15.
  */
 public class BoundingSemaphore {
