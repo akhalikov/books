@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
  *
  * Created by artur on 21.01.15.
  */
-public class CountingSemaphoreExample {
+public class CountingSemaphore {
     static final int THREADS_NUM = 7;
     static final int PERMITTED_NUM = 2;
 
