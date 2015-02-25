@@ -1,30 +1,35 @@
-package chapter5;
+package chapter5.semaphore;
 
 import utils.ThreadHelper;
 
 import java.util.concurrent.Semaphore;
 
 /**
- * Semaphore scenario of guarding critical section
+ * Main semaphore scenario of guarding critical section
  * against entry by more than N threads at a time.
  *
  * Created by artur on 21.01.15.
  */
-public class SemaphoreExample1 {
-    static final int THREADS_NUM = 5;
+public class CountingSemaphoreExample {
+    static final int THREADS_NUM = 7;
+    static final int PERMITTED_NUM = 2;
 
     public static void main(String[] args) {
-        final int permittedNum = THREADS_NUM - 2;
-
         // Creating semaphore for permittedNum threads
-        final Semaphore semaphore = new Semaphore(permittedNum);
+        final Semaphore semaphore = new Semaphore(PERMITTED_NUM);
 
         // Expecting that first 3 threads will enter critical section,
         // and the 4th and 5th threads will go after they release
         for (int i = 0; i < THREADS_NUM; i++) {
             new Thread(() -> {
                 try {
+                    // No guarantees are made about fairness of the threads
+                    // acquiring permits from the Semaphore.
+                    // That is, there is no guarantee that the first thread to call acquire()
+                    // is also the first thread to obtain a permit.
+                    System.out.println(Thread.currentThread().getName() + " has acquired lock");
                     semaphore.acquire();
+
                     System.out.println(Thread.currentThread().getName() + " is entered critical section");
                     ThreadHelper.sleepSeconds(6);
 

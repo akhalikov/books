@@ -27,7 +27,8 @@ public class PreLoader {
         System.out.println("product: " + loader.get());
     }
 
-    final FutureTask<ProductInfo> future = new FutureTask<>(() -> loadProductInfo());
+    final FutureTask<ProductInfo> future
+            = new FutureTask<>(() -> loadProductInfo());
 
     final Thread thread = new Thread(future);
 
