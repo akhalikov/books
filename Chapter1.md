@@ -1,7 +1,7 @@
 Chapter 1: Review
 ===
 
-###Risks of threads
+####Risks of threads
 
 1. Safety hazards
 	- Race conditions
