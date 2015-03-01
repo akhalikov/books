@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 /**
+ * Concurrent Cache Example
  * Created by artur on 27.02.15.
  */
 public class MemoizerExample {
