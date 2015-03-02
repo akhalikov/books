@@ -40,7 +40,7 @@ Pool creation factory methods:
 - **newCachedThreadPool**. A cached thread pool has more flexibility to reap idle threads when the current size of the pool exceeds the demand for processing, and to add new threads when demand increases, but places no bounds on the size of the pool.
 - **newSingleThreadExecutor**. A single-threaded executor guarantees that tasks are processed sequantially (FIFO, LIFO, or priority order).
 - **newScheduledThreadPool**. A fixed-size thread pool that supports delayed and periodic task execution, similar to Timer.
-- 
+
 ####6.2.3 Executor Lifecycle
 
 1. running
