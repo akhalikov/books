@@ -5,6 +5,12 @@ import utils.ThreadHelper;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * A latch is used to make the main thread wait
+ * until three other threads complete their execution.
+ * These three threads model starting services.
+ * So the example models scenario when a program should wait until
+ * some services complete their initialization.
+ *
  * Created by artur on 20.01.15.
  */
 public class ServicesStartupExample {
