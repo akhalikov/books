@@ -1,7 +1,7 @@
 Chapter 3 Review
 ===
 
-###3.1.4 Volatile variables - are weaker form of synchronization.
+####3.1.4 Volatile variables - are weaker form of synchronization.
 
 Why is it weaker form?
 
@@ -20,18 +20,18 @@ volatile variables can guarantee visibility.
 
 9. What criterias should met for using volatile variables ?
 
-###3.2 Publication and escape
+####3.2 Publication and escape
 
 1. What does it mean "object escaped" ? How it could be? 
 2. Examples of escaping.
 
-###3.3 Thread confinement
+####3.3 Thread confinement
 
 1. What is thread confinement ? Examples.
 2. Explain ad-hoc thread confinement in case of volatile variables ?
 3. What is stack confinement ?
 
-###3.4 Immutability
+####3.4 Immutability
 
 1. When an object is immutable ? (state, fields, construction)
 2. Example of using volatile to publish immutable objects.
@@ -49,7 +49,7 @@ volatile variables can guarantee visibility.
 > - Storing a reference to it into a final field of a properly constructed object; or
 > - Storing a reference to it into a field that is properly guarded by a lock.
 
-###3.3.5 Mutable objects
+####3.3.5 Mutable objects
 
 The publication requirements for an object depend on its mutability:
 
