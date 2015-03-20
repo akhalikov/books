@@ -1,6 +1,6 @@
 package chapter5.future;
 
-import utils.ThreadHelper;
+import static utils.ThreadHelper.*;
 
 import java.math.BigDecimal;
 import java.util.concurrent.ExecutionException;
@@ -15,16 +15,16 @@ public class PreLoader {
         PreLoader loader = new PreLoader();
         loader.start();
 
-        ThreadHelper.sleepSeconds(1);
+        sleepSeconds(1);
 
-        System.out.println("Getting product after 1sec...");
+        clog("Getting product after 1sec...");
         // Current thread will block here
-        System.out.println("product: " + loader.get());
+        clog("product: " + loader.get());
 
-        ThreadHelper.sleepSeconds(1);
-        System.out.println("");
-        System.out.println("Getting product again...");
-        System.out.println("product: " + loader.get());
+        sleepSeconds(1);
+
+        clog("Getting product again...");
+        clog("product: " + loader.get());
     }
 
     final FutureTask<ProductInfo> future
@@ -50,8 +50,8 @@ public class PreLoader {
 
     ProductInfo loadProductInfo() {
         // simulating latency
-        System.out.println("Loading product info...");
-        ThreadHelper.sleepSeconds(5);
+        clog("Loading product info...");
+        sleepSeconds(5);
 
         ProductInfo productInfo = new ProductInfo(
                 "101", "Book", "Concurrency In Practice", new BigDecimal("25.00"));

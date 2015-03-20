@@ -1,6 +1,6 @@
 package chapter5.barrier;
 
-import utils.ThreadHelper;
+import static utils.ThreadHelper.*;
 
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
+ * Example of CyclicBarrier
+ *
  * Created by artur on 20.01.15.
  */
 public class CyclicBarrierExample {
@@ -21,13 +23,14 @@ public class CyclicBarrierExample {
 
         // parties specifies how many threads are to sleepSeconds at the created barrier
         CyclicBarrier barrier1 = new CyclicBarrier(parties,
-                () -> System.out.println("Barrier Action 1 executed"));
+                () -> clog("Barrier Action 1 executed"));
 
         CyclicBarrier barrier2 = new CyclicBarrier(parties,
-                () -> System.out.println("Barrier Action 2 executed"));
+                () -> clog("Barrier Action 2 executed"));
 
-        for (int i = 0; i < parties; i++) {
-            new Thread(new BarrierRunnable(barrier1, barrier2)).start();
+        for (int i = 1; i <= parties; i++) {
+            new Thread(new BarrierRunnable(barrier1, barrier2), "Thread-" + i)
+                    .start();
         }
     }
 
@@ -43,23 +46,22 @@ public class CyclicBarrierExample {
         public void run() {
             try {
                 int waitInterval = rand.nextInt(MAX_SECONDS);
-                final String threadName = Thread.currentThread().getName();
 
-                System.out.println(threadName + " execution time: " + waitInterval + "s");
-                ThreadHelper.sleepSeconds(waitInterval);
-                System.out.println(threadName + " waiting at barrier 1");
+                clog("execution time: " + waitInterval + "s");
+                sleepSeconds(waitInterval);
+                clog("waiting at barrier 1");
                 // Here threads sleepSeconds on first barrier
                 barrier1.await();
 
                 waitInterval = rand.nextInt(MAX_SECONDS);
-                System.out.println(threadName + " execution time: " + waitInterval + "s");
-                ThreadHelper.sleepSeconds(waitInterval);
-                System.out.println(threadName + " waiting at barrier 2");
+                clog("execution time: " + waitInterval + "s");
+                sleepSeconds(waitInterval);
+                clog("waiting at barrier 2");
                 // Here threads sleepSeconds on second barrier
                 // one can also specify timeout of waiting
                 barrier2.await(MAX_SECONDS+1, TimeUnit.SECONDS);
 
-                System.out.println(Thread.currentThread().getName() + " done!");
+                clog("done!");
 
             } catch (InterruptedException e) {
                 e.printStackTrace();

@@ -1,6 +1,6 @@
 package chapter5.latch;
 
-import utils.ThreadHelper;
+import static utils.ThreadHelper.*;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -30,14 +30,13 @@ public class ServicesStartupExample {
 
         // waiting for all services to start
         // the main thread will sleepSeconds until countdown of latch reaches 0
-        System.out.println("Waiting for services to start...");
+        clog("Waiting for services to start...");
         try {
             latch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        System.out.println("All services are up, the application can proceed with starting!");
+        clog("All services are up, the application can proceed with starting!");
     }
 
     /**
@@ -55,7 +54,7 @@ public class ServicesStartupExample {
         }
 
         public void startUp() {
-            ThreadHelper.sleepSeconds(timeToStartSec);
+            sleepSeconds(timeToStartSec);
             System.out.println(name + " is up");
             latch.countDown();
         }
