@@ -13,21 +13,19 @@ import java.util.concurrent.BlockingQueue;
 public class PrintingQueue {
 
     public static void main(String[] args) throws Exception {
-        final BlockingQueue<Integer> queue = new ArrayBlockingQueue(1);
-        queue.add(0);
+        final BlockingQueue<String> queue = new ArrayBlockingQueue(1);
+        queue.add("0");
 
         Thread t1 = new Thread(new PrintingThread(queue));
         Thread t2 = new Thread(new PrintingThread(queue));
 
         t1.start();
         t2.start();
-
-        t2.join();
     }
 
     static class PrintingThread implements Runnable {
 
-        final BlockingQueue<Integer> queue;
+        final BlockingQueue<String> queue;
 
         public PrintingThread(BlockingQueue queue) {
             this.queue = queue;
@@ -37,9 +35,10 @@ public class PrintingQueue {
         public void run() {
             try {
                 while (true) {
-                    int value = queue.take();
-                    ThreadHelper.clog("" + value);
-                    queue.add(value == 0 ? 1 : 0);
+                    String item = queue.take();
+                    ThreadHelper.clog(item);
+                    queue.put("0".equals(item) ? "1" : "0");
+                    ThreadHelper.sleepSeconds(1);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
