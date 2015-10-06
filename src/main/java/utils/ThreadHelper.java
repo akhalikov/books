@@ -27,6 +27,15 @@ public class ThreadHelper {
         }
     }
 
+    public static void sleepMillis(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public static void sleepRandomSeconds(int bound) {
         sleepSeconds(RANDOM.nextInt(bound));
     }
