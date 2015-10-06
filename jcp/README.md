@@ -1,4 +1,4 @@
-jcp-book
-========
+Java Concurrency In Practice 
+============================
 
-Java Concurrency In Practice book examples
+Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
