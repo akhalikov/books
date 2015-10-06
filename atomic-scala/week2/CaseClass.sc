@@ -1,0 +1,10 @@
+case class Dog(name:String, breed:String="Yard dog")
+val dog1 = Dog("Henry")
+val dog2 = Dog("Cleo", "Alaskin Malamute")
+val dogs = Vector(dog1, dog2)
+dogs(0)
+dogs(1)
+
+case class Cat(name:String, age:Int)
+val cats = Vector(Cat("Miffy", 3), Cat("Rags", 2))
+cats(1)
