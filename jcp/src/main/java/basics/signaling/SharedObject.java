@@ -35,7 +35,7 @@ class SharedObject {
 			
 			// A.K.A. busy waiting
 			while (!sharedSignal.hasDataToProcess()) {
-				// is not very efficient utilization of CPU, except if average waiting time is very small
+				// It is not very efficient utilization of CPU, except if average waiting time is very small
 				//  it would be smarter if the waiting thread could somehow sleep or become inactive until 
 				// it receives the signal it is waiting for.
 				// java.lang.Object defines three methods, wait(), notify(), and notifyAll(), 
