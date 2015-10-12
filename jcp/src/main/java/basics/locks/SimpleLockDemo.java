@@ -6,7 +6,7 @@ package basics.locks;
 public class SimpleLockDemo {
 
     static class Counter {
-        private SimpleLock lock = new SimpleLock();
+        private Lock lock = new SimpleLock();
         private int count = 0;
 
         public int increment() {
