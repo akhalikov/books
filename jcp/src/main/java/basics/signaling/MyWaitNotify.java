@@ -1,6 +1,8 @@
 package basics.signaling;
 
 /**
+ * Basic wait-notify example
+ * 
  * {@See http://tutorials.jenkov.com/java-concurrency/thread-signaling.html}
  */
 public class MyWaitNotify {
