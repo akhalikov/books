@@ -6,6 +6,8 @@ package basics.signaling;
  * Notice how the doNotify() method now sets the wasSignalled variable to true before calling notify(). 
  * Also, notice how the doWait() method now checks the wasSignalled variable before calling wait(). 
  * In fact it only calls wait() if no signal was received in between the previous doWait() call and this.
+ *
+ * {@See http://tutorials.jenkov.com/java-concurrency/thread-signaling.html}
  */
 public class MyWaitNotify2 {
 
