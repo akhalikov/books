@@ -5,6 +5,8 @@ package basics.signaling;
  *
  * For inexplicable reasons it is possible for threads to wake up even if notify() and notifyAll() has not been called. 
  * This is known as spurious wakeups. Wakeups without any reason.
+ *
+ * {@See http://tutorials.jenkov.com/java-concurrency/thread-signaling.html}
  */
 public class MyWaitNotify3 {
 
