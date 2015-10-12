@@ -1,5 +1,8 @@
 package basics.signaling;
 
+/**
+ * {@See http://tutorials.jenkov.com/java-concurrency/thread-signaling.html}
+ */
 public class MyWaitNotify {
 
     private final Object monitorObject = new Object();
