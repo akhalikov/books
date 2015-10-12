@@ -1,4 +1,4 @@
-package basics;
+package basics.signaling;
 
 /**
  * See {@link http://tutorials.jenkov.com/java-concurrency/thread-signaling.html}
