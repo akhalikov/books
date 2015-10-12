@@ -6,7 +6,7 @@ package basics.locks;
  *
  * {@see http://tutorials.jenkov.com/java-concurrency/locks.html}
  */
-class SimpleLock {
+class SimpleLock implements Lock {
 
 	private boolean isLocked = false;
 
