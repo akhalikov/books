@@ -1,6 +1,6 @@
 package chapter5.queue;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.*;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

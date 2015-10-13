@@ -1,6 +1,6 @@
 package chapter5.future;
 
-import static utils.ThreadHelper.*;
+import static com.ahalikov.toolkit.threads.ThreadHelper.*;
 
 import java.math.BigDecimal;
 import java.util.concurrent.ExecutionException;

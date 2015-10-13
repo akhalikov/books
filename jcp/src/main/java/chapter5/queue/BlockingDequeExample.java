@@ -1,11 +1,9 @@
 package chapter5.queue;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.*;
 
 import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  * Very simple example of BlockingDeque usage

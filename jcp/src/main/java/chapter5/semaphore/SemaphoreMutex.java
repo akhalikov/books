@@ -1,6 +1,6 @@
 package chapter5.semaphore;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.*;
 
 import java.util.concurrent.Semaphore;
 

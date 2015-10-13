@@ -1,6 +1,6 @@
 package basics;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.*;
 
 /**
  * Example demonstrates how a thread can be interrupted

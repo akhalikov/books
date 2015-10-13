@@ -1,6 +1,6 @@
 package chapter5.barrier;
 
-import static utils.ThreadHelper.*;
+import static com.ahalikov.toolkit.threads.ThreadHelper.*;
 
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;

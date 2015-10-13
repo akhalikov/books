@@ -1,6 +1,6 @@
 package basics.bankaccount;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.ThreadHelper;
 
 import java.util.Random;
 

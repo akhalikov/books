@@ -1,7 +1,6 @@
 package chapter5.future;
 
-import utils.ThreadHelper;
-import utils.ThreadRunner;
+import com.ahalikov.toolkit.threads.*;
 
 import java.math.BigInteger;
 import java.util.Map;

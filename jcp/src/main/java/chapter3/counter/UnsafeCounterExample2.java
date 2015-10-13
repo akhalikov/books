@@ -1,6 +1,6 @@
 package chapter3.counter;
 
-import utils.ThreadRunner;
+import com.ahalikov.toolkit.threads.*;
 
 import static org.junit.Assert.assertEquals;
 

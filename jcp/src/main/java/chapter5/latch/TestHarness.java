@@ -1,6 +1,6 @@
 package chapter5.latch;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.*;
 
 import java.util.concurrent.CountDownLatch;
 

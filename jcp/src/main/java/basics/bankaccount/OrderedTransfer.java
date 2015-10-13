@@ -1,6 +1,6 @@
 package basics.bankaccount;
 
-import utils.ThreadHelper;
+import com.ahalikov.toolkit.threads.ThreadHelper;
 
 /**
  * OrderedTransfer prevents dead lock by using ordering of accounts
