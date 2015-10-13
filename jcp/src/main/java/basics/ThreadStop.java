@@ -7,7 +7,7 @@ import com.ahalikov.toolkit.threads.*;
  *
  * @author ahalikov
  */
-public class ThreadStop {
+class ThreadStop {
 
     public static void main(String[] args) {
         ThreadHelper.clog("started");

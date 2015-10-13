@@ -21,7 +21,7 @@ package basics;
  *
  * {@see https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html}
  */
-public class ReorderingExample {
+class ReorderingExample {
 
     static class SharedObject {
 

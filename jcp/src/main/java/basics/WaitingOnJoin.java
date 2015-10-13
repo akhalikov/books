@@ -12,7 +12,7 @@ import com.ahalikov.toolkit.threads.ThreadHelper;
  *
  * @author ahalikov
  */
-public class WaitingOnJoin {
+class WaitingOnJoin {
 
     public static void main(String[] args) throws Exception {
         //asyncExecution();
