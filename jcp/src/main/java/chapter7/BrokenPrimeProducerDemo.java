@@ -8,7 +8,11 @@ import java.util.concurrent.BlockingQueue;
  * Listing 7.3. Unreliable Cancellation that can Leave Producers Stuck in a Blocking Operation.
  * Don't Do this!
  *
- * @author ahalikov
+ * BrokenPrimeProducer illustrates how custom cancellation mechanisms do not always interact well
+ * with blocking library methods. If you code your tasks to be responsive to interruption, you can use interruption
+ * as your cancellation mechanism and take advantage of the interruption support provided by many library classes.
+ *
+ * !!! Interruption is usually the most sensible way to implement cancellation.
  */
 class BrokenPrimeProducerDemo {
 
