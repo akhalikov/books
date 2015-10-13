@@ -16,7 +16,7 @@ import java.util.List;
  *      PrimeGenerator uses a simple cancellation policy: client code requests cancellation by calling cancel,
  *      PrimeGenerator checks for cancellation once per prime found and exits when it detects cancellation has been requested.
  */
-public class PrimeGenerator implements Runnable {
+class PrimeGenerator implements Runnable {
 
     private final List<BigInteger> primes = new ArrayList();
     private volatile boolean cancelled;
