@@ -34,7 +34,9 @@ public class ReentrantReadWriteLock1 implements ReadWriteLock {
             try {
                 wait();
             } catch (InterruptedException e) {
-                // ...
+                // Interrupted exceptions should not be swallowed
+                // At least, restore the interrupted status like below:
+                callingThread.interrupt();
             }
         }
 

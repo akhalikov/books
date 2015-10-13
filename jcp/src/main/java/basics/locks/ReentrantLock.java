@@ -30,7 +30,9 @@ public class ReentrantLock implements Lock {
             try {
                 wait();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                // Interrupted exceptions should not be swallowed
+                // At least, restore the interrupted status like below:
+                Thread.currentThread().interrupt();
             }
         }
         isLocked = true;

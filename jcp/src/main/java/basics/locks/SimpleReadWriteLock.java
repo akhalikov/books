@@ -30,7 +30,7 @@ public class SimpleReadWriteLock implements ReadWriteLock {
             try {
                 wait();
             } catch (InterruptedException e) {
-                // ...
+                Thread.currentThread().interrupt();
             }
         }
         readers++;
@@ -49,7 +49,9 @@ public class SimpleReadWriteLock implements ReadWriteLock {
             try {
                 wait();
             } catch (InterruptedException e) {
-                // ...
+                // Interrupted exceptions should not be swallowed
+                // At least, restore the interrupted status like below:
+                Thread.currentThread().interrupt();
             }
         }
         writeRequests--;
