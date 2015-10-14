@@ -9,8 +9,8 @@ Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
 * [JSR-133 FAQ](https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html)
 * [Теория и практика Java: Работа с InterruptedException](https://www.ibm.com/developerworks/ru/library/j-jtp05236)
 * Пять вещей, которые вы не знали о ... пакете java.util.concurrent: 
-    [Часть 1](http://www.ibm.com/developerworks/ru/library/j-5things4/)    
-    [Часть 2](https://www.ibm.com/developerworks/ru/library/j-5things5/)
+    * [Часть 1](http://www.ibm.com/developerworks/ru/library/j-5things4/) 
+    * [Часть 2](https://www.ibm.com/developerworks/ru/library/j-5things5/)
 * [Теория и практика Java: Введение в неблокирующие алгоритмы](https://www.ibm.com/developerworks/ru/library/j-jtp04186/)    
 * [Модель памяти в примерах и не только](http://habrahabr.ru/post/133981/)
 * [А как же всё-таки работает многопоточность? Часть I: синхронизация](http://habrahabr.ru/post/143237/)
