@@ -9,7 +9,7 @@ package common;
  */
 public class LaunderThrowable {
 
-    public static RuntimeException launderThrowable(Throwable t) {
+    public static RuntimeException launder(Throwable t) {
         if (t instanceof RuntimeException)
             return (RuntimeException) t;
 
