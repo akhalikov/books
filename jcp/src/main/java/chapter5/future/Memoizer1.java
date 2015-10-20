@@ -22,12 +22,13 @@ import annotations.*;
  * for a long time. If multiple threads are queued up waiting to compute values not already computed,
  * compute may actually take longer than it would have without Memorization.
  */
-public class Memoizer1<A, V> implements Computable<A, V> {
+class Memoizer1<A, V> implements Computable<A, V> {
     @GuardedBy("this")
-    private final Map<A, V> cache = new HashMap<A, V>();
+    private final Map<A, V> cache = new HashMap();
+
     private final Computable<A, V> c;
 
-    public Memoizer1(Computable<A, V> c) {
+    Memoizer1(Computable<A, V> c) {
         this.c = c;
     }
 
@@ -45,8 +46,8 @@ interface Computable<A, V> {
     V compute(A arg) throws InterruptedException;
 }
 
-class ExpensiveFunction
-        implements Computable<String, BigInteger> {
+class ExpensiveFunction implements Computable<String, BigInteger> {
+
     public BigInteger compute(String arg) {
         // after deep thought...
         return new BigInteger(arg);

@@ -25,8 +25,10 @@ import java.util.concurrent.ConcurrentHashMap;
  * it knows that the most efficient way to find it is to head over to Thread X's house,
  * hang out there until X is finished, and then ask "Hey, what did you get for f (27)?"
  */
-public class Memoizer2<A, V> implements Computable<A, V> {
-    private final Map<A, V> cache = new ConcurrentHashMap<A, V>();
+class Memoizer2<A, V> implements Computable<A, V> {
+
+    private final Map<A, V> cache = new ConcurrentHashMap();
+
     private final Computable<A, V> c;
 
     public Memoizer2(Computable<A, V> c) {
