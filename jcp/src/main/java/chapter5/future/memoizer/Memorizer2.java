@@ -1,10 +1,10 @@
-package chapter5.future;
+package chapter5.future.memoizer;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Memoizer example v.2
+ * Memorizer example v.2
  *
  * Listing 5.17. Replacing HashMap with ConcurrentHashMap
  *
@@ -25,13 +25,13 @@ import java.util.concurrent.ConcurrentHashMap;
  * it knows that the most efficient way to find it is to head over to Thread X's house,
  * hang out there until X is finished, and then ask "Hey, what did you get for f (27)?"
  */
-class Memoizer2<A, V> implements Computable<A, V> {
+class Memorizer2<A, V> implements Computable<A, V> {
 
     private final Map<A, V> cache = new ConcurrentHashMap();
 
     private final Computable<A, V> c;
 
-    public Memoizer2(Computable<A, V> c) {
+    public Memorizer2(Computable<A, V> c) {
         this.c = c;
     }
 

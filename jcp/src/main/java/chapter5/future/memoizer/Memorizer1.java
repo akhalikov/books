@@ -1,12 +1,12 @@
-package chapter5.future;
+package chapter5.future.memoizer;
 
-import java.math.BigInteger;
-import java.util.*;
+import annotations.GuardedBy;
 
-import annotations.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Memoizer example v.1
+ * Memorizer example v.1
  *
  * Listing 5.16. Initial Cache Attempt Using HashMap and Synchronization
  *
@@ -21,14 +21,16 @@ import annotations.*;
  * compute at all. If another thread is busy computing a result, other threads calling compute may be blocked
  * for a long time. If multiple threads are queued up waiting to compute values not already computed,
  * compute may actually take longer than it would have without Memorization.
+ *
  */
-class Memoizer1<A, V> implements Computable<A, V> {
+class Memorizer1<A, V> implements Computable<A, V> {
+
     @GuardedBy("this")
     private final Map<A, V> cache = new HashMap();
 
     private final Computable<A, V> c;
 
-    Memoizer1(Computable<A, V> c) {
+    Memorizer1(Computable<A, V> c) {
         this.c = c;
     }
 
@@ -39,17 +41,5 @@ class Memoizer1<A, V> implements Computable<A, V> {
             cache.put(arg, result);
         }
         return result;
-    }
-}
-
-interface Computable<A, V> {
-    V compute(A arg) throws InterruptedException;
-}
-
-class ExpensiveFunction implements Computable<String, BigInteger> {
-
-    public BigInteger compute(String arg) {
-        // after deep thought...
-        return new BigInteger(arg);
     }
 }

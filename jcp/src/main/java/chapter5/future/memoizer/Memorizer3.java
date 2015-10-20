@@ -1,4 +1,4 @@
-package chapter5.future;
+package chapter5.future.memoizer;
 
 import common.LaunderThrowable;
 
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 /**
- * Memoizer example v.3
+ * Memorizer example v.3
  *
  * Listing 5.18. Memorizing Wrapper Using FutureTask.
  *
@@ -29,13 +29,13 @@ import java.util.concurrent.*;
  * Memorizer3 is vulnerable to this problem because a compound action (put-if-absent) is performed
  * on the backing map that cannot be made atomic using locking.
  */
-class Memoizer3<A, V> implements Computable<A, V> {
+class Memorizer3<A, V> implements Computable<A, V> {
 
     private final Map<A, Future<V>> cache  = new ConcurrentHashMap();
 
     private final Computable<A, V> c;
 
-    Memoizer3(Computable<A, V> c) {
+    Memorizer3(Computable<A, V> c) {
         this.c = c;
     }
 
