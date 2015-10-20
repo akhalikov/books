@@ -6,6 +6,8 @@ import java.util.*;
 import annotations.*;
 
 /**
+ * Memoizer example v.1
+ *
  * Listing 5.16. Initial Cache Attempt Using HashMap and Synchronization
  *
  * Memorizer1 in Listing 5.16 shows a first attempt: using a HashMap to store the results of previous computations.
