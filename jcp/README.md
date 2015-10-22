@@ -4,7 +4,7 @@ Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
 
 ***
 
-#####Books:
+#####Other books:
 
 * Doug Lea: [Concurrent Programming in Java: Design Principles and Pattern](http://www.amazon.com/Concurrent-Programming-Java-Principles-Pattern/dp/0201310090/)
 * Maurice Herlihy, Nir Shavit: [The Art of Multiprocessor Programming](http://www.amazon.com/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376/)
