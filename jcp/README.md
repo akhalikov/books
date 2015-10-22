@@ -9,7 +9,7 @@ Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
 * Doug Lea: [Concurrent Programming in Java: Design Principles and Pattern](http://www.amazon.com/Concurrent-Programming-Java-Principles-Pattern/dp/0201310090/)
 * Maurice Herlihy, Nir Shavit: [The Art of Multiprocessor Programming](http://www.amazon.com/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376/)
 
-#####Other resources about concurrency:
+#####Useful resources about concurrency:
 
 * Jeremy Manson, Brian Goetz: [JSR-133 FAQ](https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html)
 * Martin Thompson, etc, [Disruptor: High performance alternative to bounded queues for exchanging data between concurrent threads](http://disruptor.googlecode.com/files/Disruptor-1.0.pdf)
