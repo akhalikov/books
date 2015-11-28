@@ -5,6 +5,8 @@ import com.ahalikov.toolkit.threads.*;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * Listing 5.11 Using CountDownLatch for starting and topping threads in timing tests.
+ *
  * Created by artur on 20.01.15.
  */
 public class TestHarness {

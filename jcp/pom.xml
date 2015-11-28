@@ -8,7 +8,8 @@
         <artifactId>books</artifactId>
         <version>1</version>
     </parent>
-    <artifactId>books-jcp</artifactId>
+    <artifactId>jcp</artifactId>
+    <name>Java Concurrency In Practice</name>
     <version>1</version>
 
     <build>
