@@ -2,6 +2,8 @@
 
 Examples and exercises from **Java SE 8 for the Really Impatient**, by Cay S. Horstmann
 
+http://horstmann.com/java8
+
 Contents:
 
 1. Lambda Expressions
