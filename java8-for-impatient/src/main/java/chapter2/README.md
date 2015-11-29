@@ -1,6 +1,6 @@
 ## The Stream API
 
-2.1 From Iteration to Stream Operations
+2.1 From Iteration to Stream Operations (HelloStreams.java)
 
 2.2 Stream Creation
 
