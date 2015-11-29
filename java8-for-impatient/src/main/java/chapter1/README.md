@@ -7,4 +7,4 @@
 1.5. Constructor references (ConstructorReferences.java)
 1.6. Variable scope (VariableScopes.java)
 1.7. Default methods (DefaultMethods.java)
-1.8. Static methods in interfaces (StaticMethods.java)
+1.8. Static methods in interfaces
