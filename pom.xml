@@ -17,6 +17,7 @@
         <module>jcp</module>
         <module>java8-for-impatient</module>
         <module>learning-spark</module>
+        <module>well-grounded-java-developer</module>
     </modules>
 
     <build>
