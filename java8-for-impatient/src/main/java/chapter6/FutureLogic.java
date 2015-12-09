@@ -16,12 +16,12 @@ public class FutureLogic {
   }
 
   public void start() {
-    final DataService dataService = new DataService();
-    final ProcessingService processingService = new ProcessingService();
+    DataService dataService = new DataService();
+    ProcessingService processingService = new ProcessingService();
 
     CompletableFuture
-      .supplyAsync(() -> dataService.getData())
-      .thenApply((String data) -> processingService.process(data))
+      .supplyAsync(dataService::getData)
+      .thenApply(processingService::process)
       .thenAccept(System.out::println);
   }
 
