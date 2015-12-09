@@ -1,6 +1,5 @@
 package chapter2;
 
-import java.math.BigInteger;
 import java.util.stream.Stream;
 
 /**
