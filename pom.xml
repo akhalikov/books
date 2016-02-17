@@ -18,6 +18,7 @@
         <module>java8-for-impatient</module>
         <module>learning-spark</module>
         <module>well-grounded-java-developer</module>
+        <module>netty-in-action</module>
     </modules>
 
     <build>
@@ -30,6 +31,11 @@
                          <source>${java.version}</source>
                          <target>${java.version}</target>
                      </configuration>
+                 </plugin>
+                 <plugin>
+                     <groupId>org.codehaus.mojo</groupId>
+                     <artifactId>exec-maven-plugin</artifactId>
+                     <version>1.2.1</version>
                  </plugin>
              </plugins>
         </pluginManagement>
