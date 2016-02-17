@@ -40,9 +40,8 @@ public class WordsSearch {
     final Map<String, Set<String>> result = new HashMap<>();
 
     words.forEach(word -> {
-      if (index.containsKey(word)) {
+      if (index.containsKey(word))
         result.put(word, index.get(word));
-      }
     });
 
     return result;

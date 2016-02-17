@@ -22,28 +22,30 @@ public class WordIndexer {
 
   public void build() {
     for (Map.Entry<String, Path> docEntry : documents.entrySet()) {
-      final Path path = docEntry.getValue();
+      indexDocument(docEntry.getValue(), docEntry.getKey());
+    }
+  }
 
-      try (BufferedReader reader = Files.newBufferedReader(path)) {
-        String line;
-        while ((line = reader.readLine()) != null) {
-          String[] words = line.split("[\\.,\\s\\(\\)]+");
-          for (String word : words) {
-            if (word.length() > 0) {
-              Set<String> documentKeys = index.get(word);
-              if (documentKeys != null) {
-                documentKeys.add(docEntry.getKey());
-              } else {
-                documentKeys = new HashSet<>();
-                documentKeys.add(docEntry.getKey());
-              }
-              index.put(word, documentKeys);
+  private void indexDocument(Path path, String key) {
+    try (BufferedReader reader = Files.newBufferedReader(path)) {
+      String line;
+      while ((line = reader.readLine()) != null) {
+        String[] words = line.split("[\\.,\\s\\(\\)]+");
+        for (String word : words) {
+          if (word.length() > 0) {
+            Set<String> documentKeys = index.get(word);
+            if (documentKeys != null) {
+              documentKeys.add(key);
+            } else {
+              documentKeys = new HashSet<>();
+              documentKeys.add(key);
             }
+            index.put(word, documentKeys);
           }
         }
-      } catch (IOException x) {
-        System.err.format("IOException: %s%n", x);
       }
+    } catch (IOException x) {
+      System.err.format("IOException: %s%n", x);
     }
   }
 

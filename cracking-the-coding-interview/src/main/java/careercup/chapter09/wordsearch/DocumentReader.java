@@ -20,9 +20,9 @@ public class DocumentReader extends SimpleFileVisitor<Path> {
   @Override
   public FileVisitResult visitFile(Path file,
                                    BasicFileAttributes attrs) throws IOException {
-    if (attrs.isRegularFile()) {
+    if (attrs.isRegularFile())
       documents.put(getKey(file), file);
-    }
+
     return FileVisitResult.CONTINUE;
   }
 
