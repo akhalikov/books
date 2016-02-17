@@ -37,6 +37,6 @@ All Netty servers require the following:
     
 Here’s what happens:
 
-# As soon as the client is connected, it sends its message: Hello, Netty!
-# The server reports the received message and echoes it to the client.
-# The client reports the returned message and exits.    
+1. As soon as the client is connected, it sends its message: Hello, Netty!
+2. The server reports the received message and echoes it to the client.
+3. The client reports the returned message and exits.    
