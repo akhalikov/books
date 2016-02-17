@@ -1,0 +1,23 @@
+Part 2. Vital techniques
+
+This part of the book (chapters 3 to 6) is all about exploring vital programming
+knowledge and techniques with Java.
+
+We’ll start with a chapter on Dependency Injection, a common technique used to decouple
+code and increase testability and comprehension. As well as explaining the basics of
+Dependency Injection, we’ll also cover how it evolved and discuss how a best practice
+turned into a design pattern and from there into a framework (and even a Java standard).
+
+Next, we’ll get to grips with the multicore CPU revolution occurring in hardware.
+The well-grounded Java developer needs to be aware of Java’s concurrency capabilities,
+and how to use them to get the most out of modern processors.
+Despite Java having strong support for concurrent programming since 2006 (Java 5),
+it’s an area that has been poorly understood and underutilized, so we’ll dedicate a
+chapter to this material.
+
+You’ll learn about the Java Memory Model and how threading and concurrency is implemented
+in that model. Once you have some theory under your belt, we’ll guide you through the
+features of the java.util.concurrent package (and beyond) to start building your practical
+grounding in Java concurrency.
+
+Excerpt From: Benjamin J. Evans Martijn Verburg. “The Well-Grounded Java Developer.” iBooks.

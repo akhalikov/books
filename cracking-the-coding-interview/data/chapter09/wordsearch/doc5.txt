@@ -1,0 +1,54 @@
+Incapsula Website DDoS Protection
+
+* Always-on protection ensures automatic detection and mitigation of DDoS attacks
+* Application and network layer DDoS attack protection
+* Identification and differentiation between humans, good bots, bad bots, AJAX and APIs
+* Includes a CDN and WAF for website performance and security enhancement
+* Transparent mitigation with extremely low false positives (<0.01%)
+
+How It Works
+
+Our website protection solution uses DNS redirection to persistently reroute website traffic
+(HTTP/HTTPS) through the Incapsula network.
+
+Once traffic enters our network, it is subject to progressively-stringent layers of inspection.
+Using sophisticated security rules and challenges, Incapsula ensures that DDoS attack
+traffic is identified and filtered out, while letting legitimate traffic to flow unhindered
+to protected websites.
+At the same time, Incapsula also masks the origin server IPs to counter direct-to-IP attacks.
+
+Since the service leverages Incapsula’s global content delivery network (CDN),
+no latency is introduced as web traffic passes through it.
+In fact, in many cases user experience is enhanced.
+
+High-Capacity Network
+
+As network DDoS attacks continue to grow in size, your organization needs robust network
+capacity to mitigate any threat that might come your way.
+Incapsula’s global data center network offers 1.25Tbps of aggregate scrubbing capacity,
+enabling it to easily block attacks of any size.
+
+DDoS Bot Detection
+Incapsula’s renowned traffic inspection technology is proven to accurately identify
+malicious bots used for application layer DDoS attacks.
+Relying on a combination of behavioral and reputational analysis, rate-based heuristics,
+and a series of transparent and progressive client interrogation challenges,
+Incapsula can weed out even the most sophisticated DDoS bots, with no impact to legitimate human visitors.
+
+IP Masking
+Incapsula acts as a secure proxy, masking the IPs of your origin servers to prevent direct-to-IP
+DDoS attacks. For added security, operators can also choose to block incoming traffic from all
+non-Incapsula IPs, ensuring that all visitors are inspected on their way to the origin.
+
+Zero Business Disruption
+Incapsula not only protects websites from complete denial of service, but also from disruptions
+related to DDoS attacks, and mitigation false-positives.
+We offer transparent mitigation with less than 1% false positives, and without degrading
+the normal user experience in any way. This lets you enjoy true DDoS protection,
+even from lengthy attacks, without disrupting business performance.
+
+Real-Time Response
+Our real-time monitoring solution provides live visibility into incoming traffic streams,
+offering detailed information about suspicious visitors and abnormal behavior.
+At the same time, our custom security rule engine empowers operators to implement new security
+rules on-the-fly. Together, these features enable effective, real-time response to all security threats.

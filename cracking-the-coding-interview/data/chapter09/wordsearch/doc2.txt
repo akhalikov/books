@@ -1,0 +1,11 @@
+Schema Creation
+Now that all of the connections have been created, we can create our schema.
+When creating the schema, we can use the optional IF NOT EXISTS conditional,
+which will allow running the command multiple times without error.
+When this conditional is not specified, additional executions of the schema
+creation code will result in a QueryExecutionException.
+This conditional is available only in Cassandra 2.0 and later.
+Listing 9.4 shows how to create a keyspace and a sample table.
+
+Excerpt From: Russell Bradberry.
+“Practical Cassandra: A Developer’s Approach (Jason Arnold's Library).” iBooks.

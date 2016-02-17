@@ -1,0 +1,36 @@
+Splunk Enterprise
+http://www.splunk.com/en_us/products/splunk-enterprise.html
+
+The Platform for Operational Intelligence
+
+By monitoring and analyzing everything from customer clickstreams and transactions
+to security events and network activity, Splunk Enterprise helps you gain valuable
+Operational Intelligence from your machine-generated data.
+And with a full range of powerful search, visualization and pre-packaged content for use-cases,
+any user can quickly discover and share insights. Just point your raw data at Splunk Enterprise
+and start analyzing your world.
+
+* Collects and indexes log and machine data from any source
+* Powerful search, analysis and visualization capabilities empower users of all types
+* Apps provide solutions for security, IT ops, business analysis and more
+* Enables visibility across on premise, cloud and hybrid environments
+* Delivers the scale, security and availability to suit any organization
+* Available as a software or SaaS solution
+
+An Enterprise-Class Architecture
+
+Any Machine Data
+
+Using no predefined schema, Splunk Universal Forwarders and collection methods such as syslog,
+HTTP direct API, scripted inputs, and the mobile SDK can index unstructured data from sources
+such as applications, sensors, endpoint devices, mainframes, industrial systems and network
+packet streams. Splunk can also combine your machine data with data in your relational databases,
+data warehouses, and Hadoop and NoSQL data stores.
+
+Enterprise-Class High Availability and Scale
+
+Multi-site clustering and automatic load balancing scale to support hundreds of terabytes of
+data per day, optimize response times and provide continuous availability.
+Search Head Clustering provides support for a virtually unlimited number of concurrent users
+and searches. The High Performance Analytics Store and other acceleration technologies enable
+you to generate reports on big data at lightning fast speeds.

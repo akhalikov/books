@@ -1,0 +1,17 @@
+Cloud Platform for Operational Intelligence
+
+http://www.splunk.com/en_us/products/splunk-cloud.html
+
+SplunkCloud delivers all the features of award-winning Splunk® Enterprise, as a cloud-based service.
+The platform provides access to Splunk Enterprise Security and the Splunk App for AWS and
+enables centralized visibility across cloud, hybrid and on-premises environments.
+
+* Instant: Instant trial and instant conversion from POC to production.
+
+* Secure: Completed SOC2 Type 2 Attestation* and ISO 27001 certification*.
+  Dedicated cloud environments for each customer.
+
+* Reliable: 100% uptime SLA. All the features of Splunk Enterprise, including apps, APIs, SDKs.
+10TB+/day scalability and up to 10x bursting over licensed data volumes**.
+
+* Hybrid: Centralized visibility across Splunk Cloud (SaaS) and Splunk Enterprise (software) deployments.

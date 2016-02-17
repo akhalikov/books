@@ -1,0 +1,20 @@
+“Docker and Linux containers goes much deeper than simply redefining development.
+It is redifing the very nature of the application itself.
+The obvious impact of Docker and the ease of use it brings to Linux containers
+is the possibility to redefine the organizational divide between business,
+application development, and IT infrastructure teams.
+
+In a sense, Docker provides a tangible technology for implementing DevOps,
+which is the merger (or at least an armistice) between the often competing
+teams of development and operations. Containerization modernizes IT environments and,
+at an organizational level, allows for “proper” ownership of the technology stack and processes,
+reducing handovers and the costly change coordination that comes with them.
+Docker’s role as both a packaging format for the application and a unifying interface
+and methodology enables the application team to own the Docker-formatted container image,
+including all dependencies, while allowing operations to retain infrastructure ownership.
+With a standardized container infrastructure in place, the IT organization can then focus on
+building and managing deployments, meeting their security standards, automation needs,
+skill levels and ultimately cost profile, all without losing the ability to hold the
+application team accountable for the security and cost impact of their code that”
+
+Excerpt From: Karl Matthias and Sean P. Kane. “Docker: Up and Running.” iBooks.

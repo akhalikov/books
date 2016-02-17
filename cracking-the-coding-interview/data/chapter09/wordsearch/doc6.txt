@@ -1,0 +1,19 @@
+Preface
+
+Today, many software projects fail. There are various surveys and reports that show this,
+some of which report anywhere from 30 to 50 percent failure rates. This number doesn’t
+count those projects that delivered but with distress or that fell short of at least some of
+the prerequisite success criteria. These failures, of course, include projects for the enterprise.
+
+See the Chaos Report [Chaos Report], Dr. Dobb’s Journal [DDJ], and Scott Ambler’s survey results [Ambysoft].
+At the same time, some notable successes can be found among companies that use Scala and Akka to
+push the limits of performance and scalability [WhitePages]. So, there is not only success but
+success in the face of extreme nonfunctional requirements. Certainly it was not Scala and Akka
+alone that made these endeavors successful, but at the same time it would be difficult to deny
+that Scala and Akka played a significant role in those successes. I am also confident that
+those who make use of these tools would stand by their platform decisions as ones that were key
+to their successes.
+
+For a few years now it has been my vision to introduce the vast number of enterprises to Scala and Akka[…]”
+
+Excerpt From: Vaughn Vernon. “Reactive Messaging Patterns With the Actor Model: Applications and Integration in Scala and Akka.” iBooks.
