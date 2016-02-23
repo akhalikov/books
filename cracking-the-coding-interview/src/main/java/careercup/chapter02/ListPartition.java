@@ -43,6 +43,13 @@ public class ListPartition {
     return head;
   }
 
+  static void print(Node list) {
+    while (list != null) {
+      System.out.print(list.data + " ");
+      list = list.next;
+    }
+  }
+
   static class Node {
     int data;
     Node next;
