@@ -1,4 +1,4 @@
-package careercup.chapter10;
+package careercup.chapter10.sortedsearch;
 
 /**
  * You are given an array-like data structure Listy which lacks a size method.
@@ -15,15 +15,24 @@ package careercup.chapter10;
  *      can also check if number at index i is less than searched value
  *  2) binary search can not be applied directly because we don't know the size
  *
+ *  Examples:
+ *
+ *  Input: 1 3 4 5 8 8 10 15 23, x = 8
+ *  Output: 4
+ *
+ *  Input: 1 3 4 5 8 8 10 15 23, x = 155
+ *  Output: -1
+ *
  * Created by artur on 20.01.16.
  */
 public class SortedSearch {
 
-  int find(Listy listy, int value) {
+  static int find(Listy listy, int value) {
     int index = 1;
-    while (listy.elementAt(index) > 0 && listy.elementAt(index) > value)
+    while (listy.elementAt(index) > 0
+        && listy.elementAt(index) < value) {
       index *= 2;
-
+    }
     return binarySeach(listy, value, 0, index);
   }
 
@@ -33,29 +42,19 @@ public class SortedSearch {
   static int binarySeach(Listy listy, int value,
                          int fromIndex, int toIndex) {
     int low = fromIndex,
-       high = toIndex;
+      high = toIndex;
+
     while (low <= high) {
-      int midIndex = (low + high) >>> 1;
+      int midIndex = (low + high) / 2;
       int midVal = listy.elementAt(midIndex);
+
       if (midVal == value)
         return midIndex;
-      else if (midVal < 0 || value < midVal)
+      else if (midVal < 0 || midVal > value)
         return binarySeach(listy, value, fromIndex, midIndex-1);
-      else if (midVal)
+      else if (midVal < value)
+        return binarySeach(listy, value, midIndex+1, toIndex);
     }
-  }
-
-  static class Listy {
-    private int[] data;
-
-    public Listy(int[] data) {
-      this.data = data;
-    }
-
-    public int elementAt(int index) {
-      if (index < 0 || index >= data.length)
-        return -1;
-      return data[index];
-    }
+    return -1;
   }
 }
