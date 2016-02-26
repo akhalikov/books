@@ -18,7 +18,7 @@ package careercup.other.lists;
  *
  * @author akhalikov
  */
-public class ReversalMerge {
+public class ReversedMerge {
   static class Node {
     int data;
     Node next;

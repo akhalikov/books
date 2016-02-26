@@ -1,6 +1,6 @@
 package careercup.other.lists;
 
-import careercup.other.lists.ReversalMerge.Node;
+import careercup.other.lists.ReversedMerge.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -16,7 +16,7 @@ public class ReversalMergeTest {
     // 2->3->20
     Node second = new Node(2, new Node(3, new Node(20, null)));
 
-    Node actual = ReversalMerge.merge(first, second);
+    Node actual = ReversedMerge.merge(first, second);
     // 40->20->15->10->5->3->2
     int[] expected = {40, 20, 15, 10, 5, 3, 2};
     int i = 0;
@@ -33,7 +33,7 @@ public class ReversalMergeTest {
     Node first = null;
     // 2->3->20
     Node second = new Node(2, new Node(3, new Node(20, null)));
-    Node actual = ReversalMerge.merge(first, second);
+    Node actual = ReversedMerge.merge(first, second);
     int[] expected = {20, 3, 2};
     int i = 0;
     while (actual != null) {
