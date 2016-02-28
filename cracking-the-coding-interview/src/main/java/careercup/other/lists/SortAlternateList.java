@@ -33,7 +33,10 @@ public class SortAlternateList {
     Node descList = new Node(0);
     splitList(head, ascList, descList);
 
-    return head;
+    ascList = ascList.next;
+    descList = reverse(descList.next, null);
+
+    return merge(ascList, descList);
   }
 
   private static void splitList(Node head, Node ascList, Node descList) {
@@ -55,6 +58,34 @@ public class SortAlternateList {
 
     ascn.next = null;
     dscn.next = null;
+  }
+
+  /**
+   * Input: 40->30->12->Null
+   * Output: 12-30-40->Null
+   * @param curr
+   * @return
+   */
+  private static Node reverse(Node curr, Node prev) {
+    if (curr.next == null) {
+      curr.next = prev;
+      return curr;
+    }
+    Node next = curr.next;
+    curr.next = prev;
+    return reverse(next, curr);
+  }
+
+  private static Node merge(Node a, Node b) {
+    if (a == null) return b;
+    if (b == null) return a;
+    if (a.data < b.data) {
+      a.next = merge(a.next, b);
+      return a;
+    } else {
+      b.next = merge(a, b.next);
+      return b;
+    }
   }
 
   static class Node {

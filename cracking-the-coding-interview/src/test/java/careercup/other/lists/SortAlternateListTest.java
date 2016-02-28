@@ -16,7 +16,7 @@ public class SortAlternateListTest {
       new Node(67, new Node(12, new Node(89)))))));
     SortAlternateList.sort(list);
 
-    int[] expected = {10, 12, 30, 43, 53, 67, 89};
+    int[] expected = {10, 12, 30, 40, 53, 67, 89};
     int i = 0;
     while (list != null) {
       assertEquals(expected[i++], list.data);
