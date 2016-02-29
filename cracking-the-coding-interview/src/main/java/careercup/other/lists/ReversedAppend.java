@@ -15,4 +15,5 @@ package careercup.other.lists;
  * Created by akhalikov on 27/02/16
  */
 public class ReversedAppend {
+
 }

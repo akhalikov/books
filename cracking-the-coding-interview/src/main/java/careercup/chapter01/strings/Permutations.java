@@ -7,8 +7,10 @@ import java.util.Set;
  * Design an algorithm to print all permutations of a string.
  * For simplicity, assume all characters are unique.
  *
- * FOLLOW UP: What if input string has duplicate characters ?
+ * Follow up 1: What if input string has duplicate characters ?
  * To eliminate duplicates, I use Set data structure.
+ *
+ * Follow up 2: Count all combinations of all sub-lengths
  *
  * @author akhalikov
  */
