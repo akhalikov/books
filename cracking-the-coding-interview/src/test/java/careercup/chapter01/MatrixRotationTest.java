@@ -13,7 +13,12 @@ import static org.junit.Assert.*;
 public class MatrixRotationTest {
   @Test
   public void testRotate() throws Exception {
-    int[][] matrix = {{0, 1, 1, 3}, {3, 2, 10, 11}, {-4, 0, 0, 0}, {2, 2, 1, -9}};
+    int[][] matrix = {
+      {0, 1, 1, 3},
+      {3, 2, 10, 11},
+      {-4, 0, 0, 0},
+      {2, 2, 1, -9}
+    };
     ArrayUtils.print(matrix);
 
     System.out.println("Rotated:");
