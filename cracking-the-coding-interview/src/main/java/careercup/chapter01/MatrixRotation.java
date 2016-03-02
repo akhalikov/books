@@ -9,10 +9,32 @@ package careercup.chapter01;
 class MatrixRotation {
   /**
    * Time complexity: O(n^2)
-   * Space complexity: O(n)
+   * Space complexity: O(n^2)
+   */
+  static int[][] rotate(int[][] matrix) {
+    if (matrix == null)
+      throw new NullPointerException("matrix is null");
+    int n = matrix.length;
+    if (n == 0)
+      throw new IllegalArgumentException("matrix is empty");
+    if (n != matrix[0].length)
+      throw new IllegalArgumentException("matrix is not squared");
+    int[][] res = new int[n][n];
+    int rowOffset;
+    for (int i = 0; i < n; i++) {
+      rowOffset = n - i - 1;
+      for (int j = 0; j < n; j++)
+        res[j][rowOffset] = matrix[i][j];
+    }
+    return res;
+  }
+
+  /**
+   * Time complexity: O(n^2)
+   * Space complexity: O(1)
    * @param matrix
    */
-  static void rotate(int[][] matrix) {
+  static void rotateInPlace(int[][] matrix) {
     if (matrix == null)
       throw new NullPointerException("matrix is null");
 
