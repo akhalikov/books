@@ -1,6 +1,6 @@
 package other.arrays;
 
-import careercup.other.arrays.MaxContiguousSum.MaxSum;
+import other.arrays.MaxContiguousSum.MaxSum;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

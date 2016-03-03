@@ -1,6 +1,6 @@
 package other.lists;
 
-import careercup.other.lists.RearrangeList.Node;
+import other.lists.RearrangeList.Node;
 import org.junit.Test;
 
 /**

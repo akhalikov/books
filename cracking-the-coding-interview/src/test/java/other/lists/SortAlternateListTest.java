@@ -1,7 +1,9 @@
 package other.lists;
 
-import careercup.other.lists.SortAlternateList.Node;
+import other.lists.SortAlternateList.Node;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Test for {@link SortAlternateList}

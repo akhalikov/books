@@ -1,6 +1,6 @@
 package other.trees;
 
-import careercup.other.trees.TreeStat.Node;
+import other.trees.TreeStat.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

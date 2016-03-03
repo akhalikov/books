@@ -1,7 +1,9 @@
 package other.lists;
 
-import careercup.other.lists.SwapNodes.Node;
+import other.lists.SwapNodes.Node;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Test for {@link SwapNodes}

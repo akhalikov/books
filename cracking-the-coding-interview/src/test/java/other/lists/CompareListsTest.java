@@ -1,6 +1,6 @@
 package other.lists;
 
-import careercup.other.lists.CompareLists.Node;
+import other.lists.CompareLists.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

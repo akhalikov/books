@@ -2,7 +2,8 @@ package other.arrays;
 
 import org.junit.Test;
 
-import static careercup.other.arrays.SymmetricArrayPivot.findPivot;
+import static org.junit.Assert.assertEquals;
+import static other.arrays.SymmetricArrayPivot.findPivot;
 
 /**
  * Test for {@link SymmetricArrayPivot}

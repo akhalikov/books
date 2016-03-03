@@ -1,7 +1,9 @@
 package other.lists;
 
-import careercup.other.lists.ReversedMerge.Node;
+import other.lists.ReversedMerge.Node;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author akhalikov

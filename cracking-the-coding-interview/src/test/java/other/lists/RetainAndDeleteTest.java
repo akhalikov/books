@@ -1,7 +1,9 @@
 package other.lists;
 
-import careercup.other.lists.RetainAndDelete.Node;
+import other.lists.RetainAndDelete.Node;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Test RetainAndDeleteTest
