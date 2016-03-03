@@ -1,7 +1,5 @@
 package careercup.chapter09.socialnetwork.scalable;
 
-import careercup.chapter09.socialnetwork.Person;
-
 import java.util.HashMap;
 import java.util.Map;
 
