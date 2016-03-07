@@ -18,5 +18,8 @@ public class MaxContinuousSequenceTest {
   public void testMaxOnesIndex() {
     int[] arr = {1, 1, 0, 0, 1, 1, 1, 0, 1, 1};
     assertEquals(7, MaxContinuousSequence.maxOnesIndex(arr));
+
+    arr = new int[] {1, 0, 1, 1, 0, 0, 1, 1};
+    assertEquals(1, MaxContinuousSequence.maxOnesIndex(arr));
   }
 }
