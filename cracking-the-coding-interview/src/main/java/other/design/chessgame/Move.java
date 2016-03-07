@@ -1,4 +1,4 @@
-package other.design;
+package other.design.chessgame;
 
 /**
  * Created by akhalikov on 07/03/16

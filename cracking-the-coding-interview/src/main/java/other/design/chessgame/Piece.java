@@ -1,4 +1,4 @@
-package other.design;
+package other.design.chessgame;
 
 /**
  * Chess piece is one of the following:
@@ -7,7 +7,7 @@ package other.design;
  * Created by akhalikov on 06/03/16
  */
 public abstract class Piece {
-  enum Type {
+  public enum Type {
     King,
     Queen,
     Knight,
@@ -16,5 +16,11 @@ public abstract class Piece {
     Pawn
   }
 
+  protected Type type;
+
   public abstract boolean isMoveValid(Move move, Spot[][] board);
+
+  public Type getType() {
+    return type;
+  }
 }
