@@ -10,11 +10,11 @@ package chapter02;
  * @author akhalikov
  */
 public class Intersection {
-  static Node findIntersection(Node first, Node second) {
+  static ListNode findIntersection(ListNode first, ListNode second) {
     int len1 = length(first);
     int len2 = length(second);
-    Node shorter = len1 < len2 ? first : second;
-    Node longer = len1 < len2 ? second: first;
+    ListNode shorter = len1 < len2 ? first : second;
+    ListNode longer = len1 < len2 ? second: first;
     int delta = Math.abs(len1 - len2);
     while (delta > 0) {
       longer = longer.next;
@@ -29,22 +29,12 @@ public class Intersection {
     return null;
   }
 
-  private static int length(Node node) {
+  private static int length(ListNode node) {
     int n = 0;
     while (node != null) {
       n++;
       node = node.next;
     }
     return n;
-  }
-
-  static class Node {
-    int data;
-    Node next;
-
-    public Node(int data, Node next) {
-      this.data = data;
-      this.next = next;
-    }
   }
 }

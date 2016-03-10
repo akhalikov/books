@@ -23,11 +23,11 @@ public class CheckPalindrome {
    * @param head List
    * @return true if LL is palindrome
    */
-  static boolean isPalindrome(Node head) {
+  static boolean isPalindrome(ListNode head) {
     if (head == null)
       throw new NullPointerException("List is null");
     Stack<Integer> stack = new LinkedStack<>();
-    Node n = head;
+    ListNode n = head;
     int len = getLength(head),
         mid = len / 2,
         i = 0;
@@ -48,15 +48,15 @@ public class CheckPalindrome {
   /**
    * Small enhancement to the approach above:
    *  one list traversal via getLength() is removed
-   * @param head Node
+   * @param head ListNode
    * @return true if LL is palindrome
    */
-  static boolean isPalindrome2(Node head) {
+  static boolean isPalindrome2(ListNode head) {
     if (head == null)
       throw new NullPointerException("List is null");
 
     Stack<Integer> stack = new LinkedStack<>();
-    Node fast = head, slow = head;
+    ListNode fast = head, slow = head;
     while (fast != null && fast.next != null) {
       stack.push(slow.data);
       slow = slow.next;
@@ -80,22 +80,12 @@ public class CheckPalindrome {
    * @param head List's head
    * @return Length of the list
    */
-  private static int getLength(Node head) {
+  private static int getLength(ListNode head) {
     int len = 0;
     while (head != null) {
       head = head.next;
       len++;
     }
     return len;
-  }
-
-  static class Node {
-    int data;
-    Node next;
-
-    public Node(int data, Node next) {
-      this.data = data;
-      this.next = next;
-    }
   }
 }

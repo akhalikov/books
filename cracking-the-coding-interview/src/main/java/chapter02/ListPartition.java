@@ -20,43 +20,33 @@ package chapter02;
 public class ListPartition {
   /**
    * Just put bigger items to the end of the list, smaller to the head.
-   * @param node
-   * @return Head node of partitioned list
+   * @param ListNode
+   * @return Head ListNode of partitioned list
    */
-  static Node partition(Node node, int pivot) {
-    if (node == null)
+  static ListNode partition(ListNode ListNode, int pivot) {
+    if (ListNode == null)
       throw new NullPointerException("List is null");
 
-    Node head = node, tail = node;
-    while (node != null) {
-      Node next = node.next;
-      if (node.data < pivot) {
-        node.next = head;
-        head = node;
+    ListNode head = ListNode, tail = ListNode;
+    while (ListNode != null) {
+      ListNode next = ListNode.next;
+      if (ListNode.data < pivot) {
+        ListNode.next = head;
+        head = ListNode;
       } else {
-        tail.next = node;
-        tail = node;
+        tail.next = ListNode;
+        tail = ListNode;
       }
-      node = next;
+      ListNode = next;
     }
     tail.next = null;
     return head;
   }
 
-  static void print(Node list) {
+  static void print(ListNode list) {
     while (list != null) {
       System.out.print(list.data + " ");
       list = list.next;
-    }
-  }
-
-  static class Node {
-    int data;
-    Node next;
-
-    public Node(int data, Node next) {
-      this.data = data;
-      this.next = next;
     }
   }
 }

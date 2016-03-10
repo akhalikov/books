@@ -1,6 +1,5 @@
 package chapter02;
 
-import chapter02.RemoveMiddleNode.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,13 +12,13 @@ import static org.junit.Assert.*;
 public class RemoveMiddleNodeTest {
   @Test
   public void testRemoveNode1() throws Exception {
-    // Actual: a->b->c->d->e->f
-    Node p6 = new Node("f", null);
-    Node p5 = new Node("e", p6);
-    Node p4 = new Node("d", p5);
-    Node p3 = new Node("c", p4);
-    Node p2 = new Node("b", p3);
-    Node head = new Node("a", p2);
+    // Actual: 1->2->3->4->5->6
+    ListNode p6 = new ListNode(6, null);
+    ListNode p5 = new ListNode(5, p6);
+    ListNode p4 = new ListNode(4, p5);
+    ListNode p3 = new ListNode(3, p4);
+    ListNode p2 = new ListNode(2, p3);
+    ListNode head = new ListNode(1, p2);
 
     RemoveMiddleNode.remove(p3);
     while (head.next != null) {
@@ -27,8 +26,8 @@ public class RemoveMiddleNodeTest {
       head = head.next;
     }
 
-    // Expected: a->b->d->e->f
-    assertEquals("d", p3.data);
+    // Expected: 1-2->4->5->6
+    assertEquals(4, p3.data);
     assertEquals(p5, p3.next);
   }
 }

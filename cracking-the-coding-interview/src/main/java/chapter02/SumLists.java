@@ -20,19 +20,6 @@ package chapter02;
  * Output: 9 -> 1 -> 2, That is, 912
  */
 class SumLists {
-  static class Node {
-    int data;
-    Node next;
-
-    public Node() {
-    }
-
-    public Node(int data, Node next) {
-      this.data = data;
-      this.next = next;
-    }
-  }
-
   /**
    * Brute-force solution to the first case of reversed lists
    * Time complexity: O(n^2)
@@ -40,7 +27,7 @@ class SumLists {
    * @param q Node
    * @return Node
    */
-  static Node sum(Node p, Node q) {
+  static ListNode sum(ListNode p, ListNode q) {
     long x = toNumber(p);
     long y = toNumber(q);
     return toList(x + y);
@@ -51,7 +38,7 @@ class SumLists {
    * @param node
    * @return
    */
-  private static long toNumber(Node node) {
+  private static long toNumber(ListNode node) {
     long num = 0;
     int factor = 0;
     while (node != null) {
@@ -65,15 +52,15 @@ class SumLists {
    * Time complexity: O(n^2)
    * @param num
    */
-  private static Node toList(long num) {
-    Node head = new Node();
-    Node node = head;
+  private static ListNode toList(long num) {
+    ListNode head = new ListNode();
+    ListNode node = head;
     while (num > 0) {
       long digit = num >= 10 ? num % 10 : num;
       num = num / 10;
       node.data = (int) digit;
       if (num > 0) {
-        node.next = new Node();
+        node.next = new ListNode();
         node = node.next;
       }
     }

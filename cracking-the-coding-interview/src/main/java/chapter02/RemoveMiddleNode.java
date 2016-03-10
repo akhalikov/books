@@ -9,31 +9,15 @@ package chapter02;
  */
 public class RemoveMiddleNode {
 
-  static class Node {
-    String data;
-    Node next;
-
-    public Node(String data, Node next) {
-      this.data = data;
-      this.next = next;
-    }
-
-    @Override
-    public String toString() {
-      return data;
-    }
-  }
-
-  static void remove(Node n) {
+  static void remove(ListNode n) {
     if (n == null || n.next == null)
       throw new IllegalArgumentException("n is null or not in the middle");
 
-    Node next = n.next;
+    ListNode next = n.next;
     n.data = next.data;
     n.next = next.next;
 
-    // clear node for GC
-    next.data = null;
+    // clear next node
     next.next = null;
   }
 }

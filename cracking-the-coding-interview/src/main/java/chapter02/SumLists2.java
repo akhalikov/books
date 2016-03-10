@@ -1,7 +1,5 @@
 package chapter02;
 
-import chapter02.SumLists.Node;
-
 /**
  * More optimal approach to {@link SumLists} to the first case of reversed lists
  *
@@ -16,7 +14,7 @@ public class SumLists2 {
    * @param q List 2
    * @return Sum of lists
    */
-  static Node sum(Node p, Node q) {
+  static ListNode sum(ListNode p, ListNode q) {
     return sumRec(p, q, 0);
   }
 
@@ -27,7 +25,7 @@ public class SumLists2 {
    * @param carry
    * @return Node
    */
-  private static Node sumRec(Node p, Node q, int carry) {
+  private static ListNode sumRec(ListNode p, ListNode q, int carry) {
     if (p == null && q == null && carry == 0) // base case
       return null;
 
@@ -36,7 +34,7 @@ public class SumLists2 {
       + (q != null ? q.data: 0);
 
     carry = s / 10;
-    Node sum = new Node(s % 10, null);
+    ListNode sum = new ListNode(s % 10, null);
     sum.next = sumRec(
       p != null ? p.next : null,
       q != null ? q.next : null,
