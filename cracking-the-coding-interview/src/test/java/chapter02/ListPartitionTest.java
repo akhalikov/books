@@ -1,27 +1,28 @@
 package chapter02;
 
-import chapter02.ListPartition.Node;
 import org.junit.Test;
 
 /**
+ * Test for {@link ListPartition}
+ *
  * @author akhalikov
  */
 public class ListPartitionTest {
   @Test
   public void testPartition() throws Exception {
-    Node list1 = new Node(3, new Node(5, new Node(8,
-      new Node(5, new Node(10, new Node(2, new Node(1, null)))))));
-    Node result = ListPartition.partition(list1, 5);
+    ListNode list1 = new ListNode(3, new ListNode(5, new ListNode(8,
+      new ListNode(5, new ListNode(10, new ListNode(2, new ListNode(1, null)))))));
+    ListNode result = ListPartition.partition(list1, 5);
     ListPartition.print(result);
 
     System.out.println();
-    Node list2 = new Node(10, new Node(11, new Node(12,
-      new Node(0, new Node(1, new Node(2, new Node(3, null)))))));
+    ListNode list2 = new ListNode(10, new ListNode(11, new ListNode(12,
+      new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3, null)))))));
     result = ListPartition.partition(list2, 5);
     ListPartition.print(result);
 
     System.out.println();
-    Node list3 = new Node(1, null);
+    ListNode list3 = new ListNode(1, null);
     result = ListPartition.partition(list3, 100);
     ListPartition.print(result);
   }

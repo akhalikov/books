@@ -2,7 +2,6 @@ package chapter02;
 
 import org.junit.Test;
 
-import static chapter02.NthToTheLast.Node;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -16,14 +15,14 @@ public class NthToTheLastTest {
     assertEquals("Empty list", null, NthToTheLast.find(null, 5));
 
     // 1-element list
-    Node head = new Node(1, null);
+    ListNode head = new ListNode(1, null);
     assertEquals(head, NthToTheLast.find(head, 1));
 
-    Node p1 = new Node(1, null);
-    Node p2 = new Node(2, null);
-    Node p3 = new Node(3, null);
-    Node p4 = new Node(4, null);
-    Node p5 = new Node(5, null);
+    ListNode p1 = new ListNode(1, null);
+    ListNode p2 = new ListNode(2, null);
+    ListNode p3 = new ListNode(3, null);
+    ListNode p4 = new ListNode(4, null);
+    ListNode p5 = new ListNode(5, null);
     p1.next = p2;
     p2.next = p3;
     p3.next = p4;

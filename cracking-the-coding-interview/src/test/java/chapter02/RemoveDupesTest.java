@@ -1,10 +1,9 @@
 package chapter02;
 
-import chapter02.RemoveDupes.Node;
-
-import static junit.framework.Assert.*;
-
 import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNull;
 
 /**
  * Test for {@link RemoveDupes}
@@ -13,7 +12,7 @@ public class RemoveDupesTest {
 
   @Test
   public void testRemoveDupesEmptyList() throws Exception {
-    Node list = new Node(1, null);
+    ListNode list = new ListNode(1, null);
     RemoveDupes.removeDupes(list);
     assertEquals(1, list.data);
     assertEquals(null, list.next);
@@ -21,12 +20,12 @@ public class RemoveDupesTest {
 
   @Test
   public void testRemoveDupes() throws Exception {
-    Node list = new Node(6, new Node(5, new Node(3,
-      new Node(2, new Node(4, new Node(1, new Node(2, null)))))));
+    ListNode list = new ListNode(6, new ListNode(5, new ListNode(3,
+      new ListNode(2, new ListNode(4, new ListNode(1, new ListNode(2, null)))))));
 
     RemoveDupes.removeDupes(list);
     assertEquals(6, list.data);
-    Node p = list.next;
+    ListNode p = list.next;
     assertEquals(5, p.data);
 
     p = p.next;
@@ -47,12 +46,12 @@ public class RemoveDupesTest {
 
   @Test
   public void testRemoveDupes2() throws Exception {
-    Node list = new Node(6, new Node(5, new Node(3,
-      new Node(2, new Node(4, new Node(1, new Node(2, null)))))));
+    ListNode list = new ListNode(6, new ListNode(5, new ListNode(3,
+      new ListNode(2, new ListNode(4, new ListNode(1, new ListNode(2, null)))))));
 
     RemoveDupes.removeDupes2(list);
     assertEquals(6, list.data);
-    Node p = list.next;
+    ListNode p = list.next;
     assertEquals(5, p.data);
 
     p = p.next;

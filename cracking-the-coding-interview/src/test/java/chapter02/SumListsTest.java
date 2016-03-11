@@ -1,9 +1,9 @@
 package chapter02;
 
-import chapter02.SumLists.Node;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Test for {@link SumLists}
@@ -17,9 +17,9 @@ public class SumListsTest {
    */
   @Test
   public void testSum() {
-    Node p = new Node(7, new Node(1, new Node(6, null)));
-    Node q = new Node(5, new Node(9, new Node(2, null)));
-    Node actual = SumLists.sum(p, q);
+    ListNode p = new ListNode(7, new ListNode(1, new ListNode(6, null)));
+    ListNode q = new ListNode(5, new ListNode(9, new ListNode(2, null)));
+    ListNode actual = SumLists.sum(p, q);
     assertNotNull(actual);
     assertEquals(2, actual.data);
     assertEquals(1, actual.next.data);
