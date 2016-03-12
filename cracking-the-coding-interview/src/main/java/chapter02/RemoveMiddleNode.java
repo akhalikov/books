@@ -1,5 +1,7 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
+
 /**
  * Implement an algorithm to delete a node in the middle of a singly linked list,
  * given only access to that node.
@@ -9,11 +11,11 @@ package chapter02;
  */
 public class RemoveMiddleNode {
 
-  static void remove(ListNode n) {
+  static void remove(Node n) {
     if (n == null || n.next == null)
       throw new IllegalArgumentException("n is null or not in the middle");
 
-    ListNode next = n.next;
+    Node next = n.next;
     n.data = next.data;
     n.next = next.next;
 

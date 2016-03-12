@@ -1,5 +1,6 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
 import org.junit.Test;
 
 /**
@@ -10,19 +11,17 @@ import org.junit.Test;
 public class ListPartitionTest {
   @Test
   public void testPartition() throws Exception {
-    ListNode list1 = new ListNode(3, new ListNode(5, new ListNode(8,
-      new ListNode(5, new ListNode(10, new ListNode(2, new ListNode(1, null)))))));
-    ListNode result = ListPartition.partition(list1, 5);
+    LinkedList list1 = LinkedList.fromArray(3, 5, 8, 5, 10, 2, 1);
+    Node result = ListPartition.partition(list1.head, 5);
     ListPartition.print(result);
 
     System.out.println();
-    ListNode list2 = new ListNode(10, new ListNode(11, new ListNode(12,
-      new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3, null)))))));
-    result = ListPartition.partition(list2, 5);
+    LinkedList list2 = LinkedList.fromArray(10, 11, 12, 0, 1, 2, 3);
+    result = ListPartition.partition(list2.head, 5);
     ListPartition.print(result);
 
     System.out.println();
-    ListNode list3 = new ListNode(1, null);
+    Node list3 = new Node(1);
     result = ListPartition.partition(list3, 100);
     ListPartition.print(result);
   }

@@ -1,5 +1,7 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
+
 /**
  * Given two singly linked lists, determine if two lists intersect.
  * Return the intersecting node. Note that the intersection is defined based on reference, not value.
@@ -10,11 +12,11 @@ package chapter02;
  * @author akhalikov
  */
 public class Intersection {
-  static ListNode findIntersection(ListNode first, ListNode second) {
+  static Node findIntersection(Node first, Node second) {
     int len1 = length(first);
     int len2 = length(second);
-    ListNode shorter = len1 < len2 ? first : second;
-    ListNode longer = len1 < len2 ? second: first;
+    Node shorter = len1 < len2 ? first : second;
+    Node longer = len1 < len2 ? second: first;
     int delta = Math.abs(len1 - len2);
     while (delta > 0) {
       longer = longer.next;
@@ -29,7 +31,7 @@ public class Intersection {
     return null;
   }
 
-  private static int length(ListNode node) {
+  private static int length(Node node) {
     int n = 0;
     while (node != null) {
       n++;

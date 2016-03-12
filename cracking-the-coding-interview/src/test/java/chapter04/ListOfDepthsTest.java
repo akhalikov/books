@@ -1,6 +1,5 @@
 package chapter04;
 
-import chapter04.ListOfDepths.TreeNode;
 import org.junit.Test;
 
 import java.util.LinkedList;

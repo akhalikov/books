@@ -1,5 +1,7 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
+
 import java.util.HashSet;
 
 /**
@@ -12,10 +14,10 @@ class RemoveDupes {
    * Solution using hash-table to track duplicate elements
    * Runtime: O(n), memory: O(n)
    */
-  static void removeDupes(ListNode head) {
+  static void removeDupes(Node head) {
     if (head == null || head.next == null)
       return;
-    ListNode curr = head.next, prev = head;
+    Node curr = head.next, prev = head;
     HashSet<Integer> seen = new HashSet<>();
     while (curr != null) {
       if (seen.contains(curr.data)) {
@@ -34,12 +36,12 @@ class RemoveDupes {
    * Solution without additional buffer
    * Runtime - O(n^2), memory - O(1)
    */
-  static void removeDupes2(ListNode head) {
+  static void removeDupes2(Node head) {
     if (head == null || head.next == null)
       return;
-    ListNode curr = head;
+    Node curr = head;
     while (curr != null) {
-      ListNode runner = curr;
+      Node runner = curr;
       while (runner.next != null) {
         if (runner.next.data == curr.data) {
           runner.next = runner.next.next;

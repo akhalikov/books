@@ -1,6 +1,10 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
 import org.junit.Test;
+import sun.awt.image.ImageWatched;
+
+import java.awt.*;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,35 +17,31 @@ public class CheckPalindromeTest {
   @Test
   public void testIsPalindrome() throws Exception {
     // odd number of items
-    ListNode list1 = new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(1,
-      new ListNode(2, new ListNode(3, new ListNode(4, null)))))));
-    assertTrue(CheckPalindrome.isPalindrome(list1));
+    LinkedList list1 = LinkedList.fromArray(4, 3, 2, 1, 2, 3, 4);
+    assertTrue(CheckPalindrome.isPalindrome(list1.head));
 
     // even number of items
-    ListNode list2 = new ListNode(4, new ListNode(3, new ListNode(2,
-      new ListNode(2, new ListNode(3, new ListNode(4, null))))));
-    assertTrue(CheckPalindrome.isPalindrome(list2));
+    LinkedList list2 = LinkedList.fromArray(4, 3, 2, 2, 3, 4);
+    assertTrue(CheckPalindrome.isPalindrome(list2.head));
 
     // one item
-    ListNode head = new ListNode(33, null);
-    assertTrue(CheckPalindrome.isPalindrome(head));
+    Node list3 = new Node(33);
+    assertTrue(CheckPalindrome.isPalindrome(list3));
   }
 
   @Test
   public void testIsPalindrome2() throws Exception {
     // odd number of items
-    ListNode list1 = new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(1,
-      new ListNode(2, new ListNode(3, new ListNode(4, null)))))));
-    assertTrue(CheckPalindrome.isPalindrome2(list1));
+    LinkedList list1 = LinkedList.fromArray(4, 3, 2, 1, 2, 3, 4);
+    assertTrue(CheckPalindrome.isPalindrome2(list1.head));
 
     // even number of items
-    ListNode list2 = new ListNode(4, new ListNode(3, new ListNode(2,
-      new ListNode(2, new ListNode(3, new ListNode(4, null))))));
-    assertTrue(CheckPalindrome.isPalindrome2(list2));
+    LinkedList list2 = LinkedList.fromArray(4, 3, 2, 2, 3, 4);
+    assertTrue(CheckPalindrome.isPalindrome2(list2.head));
 
     // one item
-    ListNode head = new ListNode(33, null);
-    assertTrue(CheckPalindrome.isPalindrome2(head));
+    Node list3 = new Node(33);
+    assertTrue(CheckPalindrome.isPalindrome2(list3));
   }
 
   @Test(expected = NullPointerException.class)

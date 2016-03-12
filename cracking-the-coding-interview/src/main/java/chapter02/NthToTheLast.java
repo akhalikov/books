@@ -1,5 +1,7 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
+
 /**
  * Implement an algorithm to find the n-th to last element of a singly linked list.
  */
@@ -8,11 +10,11 @@ public class NthToTheLast {
    * Time complexity: O(n)
    * Space complexity: O(1)
    */
-  static ListNode find(ListNode head, int n) {
+  static Node find(Node head, int n) {
     if (head == null)
       return null;
 
-    ListNode p1 = head, p2 = head;
+    Node p1 = head, p2 = head;
     for (int i = 0; i < n - 1; i++) {
       if (p2 == null)
         return null;

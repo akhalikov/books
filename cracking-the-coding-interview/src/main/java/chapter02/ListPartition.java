@@ -1,5 +1,7 @@
 package chapter02;
 
+import chapter02.LinkedList.Node;
+
 /**
  * Write code to partition LL around a value x,
  * such that all nodes less than x come before all nodes >= x.
@@ -20,30 +22,30 @@ package chapter02;
 public class ListPartition {
   /**
    * Just put bigger items to the end of the list, smaller to the head.
-   * @param ListNode
-   * @return Head ListNode of partitioned list
+   * @param Node
+   * @return Head Node of partitioned list
    */
-  static ListNode partition(ListNode ListNode, int pivot) {
-    if (ListNode == null)
+  static Node partition(Node Node, int pivot) {
+    if (Node == null)
       throw new NullPointerException("List is null");
 
-    ListNode head = ListNode, tail = ListNode;
-    while (ListNode != null) {
-      ListNode next = ListNode.next;
-      if (ListNode.data < pivot) {
-        ListNode.next = head;
-        head = ListNode;
+    Node head = Node, tail = Node;
+    while (Node != null) {
+      Node next = Node.next;
+      if (Node.data < pivot) {
+        Node.next = head;
+        head = Node;
       } else {
-        tail.next = ListNode;
-        tail = ListNode;
+        tail.next = Node;
+        tail = Node;
       }
-      ListNode = next;
+      Node = next;
     }
     tail.next = null;
     return head;
   }
 
-  static void print(ListNode list) {
+  static void print(Node list) {
     while (list != null) {
       System.out.print(list.data + " ");
       list = list.next;

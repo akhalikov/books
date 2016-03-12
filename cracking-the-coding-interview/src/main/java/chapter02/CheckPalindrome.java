@@ -2,6 +2,7 @@ package chapter02;
 
 import algo.stack.LinkedStack;
 import algo.stack.Stack;
+import chapter02.LinkedList.Node;
 
 /**
  * Implement a function to check if a linked list is a palindrome.
@@ -23,11 +24,11 @@ public class CheckPalindrome {
    * @param head List
    * @return true if LL is palindrome
    */
-  static boolean isPalindrome(ListNode head) {
+  static boolean isPalindrome(Node head) {
     if (head == null)
       throw new NullPointerException("List is null");
     Stack<Integer> stack = new LinkedStack<>();
-    ListNode n = head;
+    Node n = head;
     int len = getLength(head),
         mid = len / 2,
         i = 0;
@@ -48,15 +49,15 @@ public class CheckPalindrome {
   /**
    * Small enhancement to the approach above:
    *  one list traversal via getLength() is removed
-   * @param head ListNode
+   * @param head Node
    * @return true if LL is palindrome
    */
-  static boolean isPalindrome2(ListNode head) {
+  static boolean isPalindrome2(Node head) {
     if (head == null)
       throw new NullPointerException("List is null");
 
     Stack<Integer> stack = new LinkedStack<>();
-    ListNode fast = head, slow = head;
+    Node fast = head, slow = head;
     while (fast != null && fast.next != null) {
       stack.push(slow.data);
       slow = slow.next;
@@ -80,7 +81,7 @@ public class CheckPalindrome {
    * @param head List's head
    * @return Length of the list
    */
-  private static int getLength(ListNode head) {
+  private static int getLength(Node head) {
     int len = 0;
     while (head != null) {
       head = head.next;
