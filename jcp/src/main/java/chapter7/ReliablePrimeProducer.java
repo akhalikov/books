@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingQueue;
 /**
  * Listing 7.5. Using Interruption for Cancellation.
  *
- * {@link chapter7.BrokenPrimeProducerDemo.BrokenPrimeProducer} can be easily fixed (and simplified)
+ * {@link BrokenPrimeProducer.PrimeProducer} can be easily fixed (and simplified)
  * by using interruption instead of a boolean flag to request cancellation, as shown in Listing 7.5.
  *
  * There are two points in each loop iteration where interruption may be detected: in the blocking put call,
@@ -17,28 +17,29 @@ import java.util.concurrent.BlockingQueue;
  * When calls to interruptible blocking methods are not frequent enough to deliver the desired responsiveness,
  * explicitly testing the interrupted status can help.
  */
-class ReliablePrimeProducerDemo {
+class ReliablePrimeProducer {
 
-    static class PrimeProducer extends Thread {
-        private final BlockingQueue<BigInteger> queue;
+  static class PrimeProducer extends Thread {
+    private final BlockingQueue<BigInteger> queue;
 
-        PrimeProducer(BlockingQueue<BigInteger> queue) {
-            this.queue = queue;
-        }
-
-        public void run() {
-            try {
-                BigInteger p = BigInteger.ONE;
-                while (!Thread.currentThread().isInterrupted()) {
-                    queue.put(p = p.nextProbablePrime());
-                }
-            } catch (InterruptedException consumed) {
-                // Allow thread to exit
-            }
-        }
-
-        public void cancel() {
-            interrupt();
-        }
+    PrimeProducer(BlockingQueue<BigInteger> queue) {
+      this.queue = queue;
     }
+
+    @Override
+    public void run() {
+      try {
+        BigInteger p = BigInteger.ONE;
+        while (!Thread.currentThread().isInterrupted()) {
+          queue.put(p = p.nextProbablePrime());
+        }
+      } catch (InterruptedException consumed) {
+        // Allow thread to exit
+      }
+    }
+
+    void cancel() {
+      interrupt();
+    }
+  }
 }

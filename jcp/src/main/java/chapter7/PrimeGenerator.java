@@ -13,56 +13,55 @@ import java.util.List;
  * before searching for the next prime number. (For this to work reliably, cancelled must be volatile.)
  *
  * CANCELLATION POLICY:
- *      PrimeGenerator uses a simple cancellation policy: client code requests cancellation by calling cancel,
- *      PrimeGenerator checks for cancellation once per prime found and exits when it detects cancellation has been requested.
+ * PrimeGenerator uses a simple cancellation policy: client code requests cancellation by calling cancel,
+ * PrimeGenerator checks for cancellation once per prime found and exits when it detects cancellation has been requested.
  */
 class PrimeGenerator implements Runnable {
+  private final List<BigInteger> primes = new ArrayList();
+  private volatile boolean cancelled;
 
-    private final List<BigInteger> primes = new ArrayList();
-    private volatile boolean cancelled;
-
-    @Override
-    public void run() {
-        BigInteger p = BigInteger.ONE;
-        while (!cancelled) {
-            p = p.nextProbablePrime();
-            synchronized (this) {
-                primes.add(p);
-            }
-        }
+  @Override
+  public void run() {
+    BigInteger p = BigInteger.ONE;
+    while (!cancelled) {
+      p = p.nextProbablePrime();
+      synchronized (this) {
+        primes.add(p);
+      }
     }
+  }
 
-    public void cancel() {
-        cancelled = true;
-    }
+  void cancel() {
+    cancelled = true;
+  }
 
-    public synchronized List<BigInteger> get() {
-        return new ArrayList(primes);
-    }
+  synchronized List<BigInteger> get() {
+    return new ArrayList(primes);
+  }
 
-    /**
-     * Listing 7.2 shows a sample use of this class that lets the prime generator run for one second before cancelling it.
-     * The generator won't necessarily stop after exactly one second, since there may be some delay between the time that
-     * cancellation is requested and the time that the run loop next checks for cancellation.
-     *
-     * The cancel method is called from a finally block to ensure that the prime generator is cancelled even if the call
-     * to sleep is interrupted. If cancel were not called, the primeͲseeking thread would run forever,
-     * consuming CPU cycles and preventing the JVM from exiting.
-     */
-    public static List<BigInteger> aSecondOfPrimes() throws InterruptedException {
-        PrimeGenerator generator = new PrimeGenerator();
-        new Thread(generator).start();
-        try {
-            Thread.sleep(1_000);
-        } finally {
-            generator.cancel();
-        }
-        return generator.get();
+  /**
+   * Listing 7.2 shows a sample use of this class that lets the prime generator run for one second before cancelling it.
+   * The generator won't necessarily stop after exactly one second, since there may be some delay between the time that
+   * cancellation is requested and the time that the run loop next checks for cancellation.
+   *
+   * The cancel method is called from a finally block to ensure that the prime generator is cancelled even if the call
+   * to sleep is interrupted. If cancel were not called, the primeͲseeking thread would run forever,
+   * consuming CPU cycles and preventing the JVM from exiting.
+   */
+  private static List<BigInteger> aSecondOfPrimes() throws InterruptedException {
+    PrimeGenerator generator = new PrimeGenerator();
+    new Thread(generator).start();
+    try {
+      Thread.sleep(1_000);
+    } finally {
+      generator.cancel();
     }
+    return generator.get();
+  }
 
-    public static void main(String[] args) throws Exception {
-        List<BigInteger> primes = aSecondOfPrimes();
-        for (BigInteger p: primes)
-            System.out.println(p);
-    }
+  static void main(String[] args) throws Exception {
+    List<BigInteger> primes = aSecondOfPrimes();
+    for (BigInteger p : primes)
+      System.out.println(p);
+  }
 }
