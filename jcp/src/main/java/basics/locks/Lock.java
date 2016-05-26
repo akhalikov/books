@@ -4,8 +4,6 @@ package basics.locks;
  * Lock interface
  */
 public interface Lock {
-
-    void lock();
-
-    void unlock();
+  void lock();
+  void unlock();
 }

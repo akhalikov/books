@@ -23,18 +23,17 @@ package basics;
  */
 class ReorderingExample {
 
-    static class SharedObject {
+  static class SharedObject {
+    int x = 0, y = 0;
 
-        int x = 0, y = 0;
-
-        void write() {
-            x = 1;
-            y = 2;
-        }
-
-        void read() {
-            int r1 = y;
-            int r2 = x;
-        }
+    void write() {
+      x = 1;
+      y = 2;
     }
+
+    void read() {
+      int r1 = y;
+      int r2 = x;
+    }
+  }
 }

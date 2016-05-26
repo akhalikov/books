@@ -11,17 +11,17 @@ package basics;
  */
 class InitOnDemandHolderExample {
 
-    static class Something {
-        private static Something instance = null;
+  static class Something {
+    private static Something instance = null;
 
-        public static Something getInstance() {
-            return LazySomethingHolder.something;
-        }
-
-        // ...
-
-        private static class LazySomethingHolder {
-            public static Something something = new Something();
-        }
+    public static Something getInstance() {
+      return LazySomethingHolder.something;
     }
+
+    // ...
+
+    private static class LazySomethingHolder {
+      public static Something something = new Something();
+    }
+  }
 }

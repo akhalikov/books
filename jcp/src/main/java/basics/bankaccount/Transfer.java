@@ -7,9 +7,9 @@ package basics.bankaccount;
  */
 interface Transfer {
 
-    void execute(BankAccount from, BankAccount to, double amount);
+  void execute(BankAccount from, BankAccount to, double amount);
 
-    static String getInfo(BankAccount a, BankAccount b) {
-        return a.toString() + ", " + b.toString();
-    }
+  static String getInfo(BankAccount a, BankAccount b) {
+    return a.toString() + ", " + b.toString();
+  }
 }

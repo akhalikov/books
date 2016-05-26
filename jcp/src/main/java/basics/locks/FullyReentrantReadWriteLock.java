@@ -10,111 +10,110 @@ import java.util.Map;
  */
 public class FullyReentrantReadWriteLock implements ReadWriteLock {
 
-    private Map<Thread, Integer> readingThreads = new HashMap();
+  private Map<Thread, Integer> readingThreads = new HashMap();
 
-    private int writeAccesses = 0;
-    private int writeRequests = 0;
-    private Thread writingThread = null;
+  private int writeAccesses = 0;
+  private int writeRequests = 0;
+  private Thread writingThread = null;
 
-    @Override
-    public synchronized void lockRead() {
-        Thread callingThread = Thread.currentThread();
-        while (! canGrantReadAccess(callingThread)) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                // ...
-            }
-        }
-
-        readingThreads.put(callingThread, getAccessCount(callingThread) + 1);
+  @Override
+  public synchronized void lockRead() {
+    Thread callingThread = Thread.currentThread();
+    while (!canGrantReadAccess(callingThread)) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        // ...
+      }
     }
 
-    @Override
-    public void unlockRead() {
-        Thread callingThread = Thread.currentThread();
-        if (!isReader(callingThread)) {
-            throw new IllegalMonitorStateException("Calling Thread does not" +
-                    " hold a read lock on this ReadWriteLock");
-        }
-        int accessCount = getReadAccessCount(callingThread);
-        if (accessCount == 1) {
-            readingThreads.remove(callingThread);
-        }
-        else {
-            readingThreads.put(callingThread, accessCount - 1);
-        }
-        notifyAll();
-    }
+    readingThreads.put(callingThread, getAccessCount(callingThread) + 1);
+  }
 
-    @Override
-    public void lockWrite() {
-        writeRequests++;
-        Thread callingThread = Thread.currentThread();
-        while (! canGrantWriteAccess(callingThread)) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                // ...
-            }
-        }
-        writeRequests--;
-        writeAccesses++;
-        writingThread = callingThread;
+  @Override
+  public void unlockRead() {
+    Thread callingThread = Thread.currentThread();
+    if (!isReader(callingThread)) {
+      throw new IllegalMonitorStateException("Calling Thread does not" +
+          " hold a read lock on this ReadWriteLock");
     }
-
-    @Override
-    public void unlockWrite() {
-
+    int accessCount = getReadAccessCount(callingThread);
+    if (accessCount == 1) {
+      readingThreads.remove(callingThread);
+    } else {
+      readingThreads.put(callingThread, accessCount - 1);
     }
+    notifyAll();
+  }
 
-    private int getReadAccessCount(Thread callingThread){
-        Integer accessCount = readingThreads.get(callingThread);
-        return (accessCount == null) ? 0: accessCount.intValue();
+  @Override
+  public void lockWrite() {
+    writeRequests++;
+    Thread callingThread = Thread.currentThread();
+    while (!canGrantWriteAccess(callingThread)) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        // ...
+      }
     }
+    writeRequests--;
+    writeAccesses++;
+    writingThread = callingThread;
+  }
 
-    private boolean canGrantReadAccess(Thread thread){
-        if (isWriter(thread)) return true;
-        if (hasWriter()) return false;
-        if (isReader(thread)) return true;
-        if (hasWriteRequests()) return false;
-        return true;
-    }
+  @Override
+  public void unlockWrite() {
 
-    private boolean canGrantWriteAccess(Thread thread) {
-        if (isOnlyReader(thread)) return true;
-        if (hasReaders()) return false;
-        if (writingThread == null) return true;
-        if (!isWriter(thread)) return false;
-        return true;
-    }
+  }
 
-    private boolean hasReaders(){
-        return readingThreads.size() > 0;
-    }
+  private int getReadAccessCount(Thread callingThread) {
+    Integer accessCount = readingThreads.get(callingThread);
+    return (accessCount == null) ? 0 : accessCount.intValue();
+  }
 
-    private boolean isReader(Thread thread){
-        return readingThreads.get(thread) != null;
-    }
+  private boolean canGrantReadAccess(Thread thread) {
+    if (isWriter(thread)) return true;
+    if (hasWriter()) return false;
+    if (isReader(thread)) return true;
+    if (hasWriteRequests()) return false;
+    return true;
+  }
 
-    private boolean isOnlyReader(Thread callingThread){
-        return readingThreads.size() == 1 && readingThreads.get(callingThread) != null;
-    }
+  private boolean canGrantWriteAccess(Thread thread) {
+    if (isOnlyReader(thread)) return true;
+    if (hasReaders()) return false;
+    if (writingThread == null) return true;
+    if (!isWriter(thread)) return false;
+    return true;
+  }
 
-    private int getAccessCount(Thread thread) {
-        Integer accessCount = readingThreads.get(thread);
-        return (accessCount == null) ? 0 : accessCount.intValue();
-    }
+  private boolean hasReaders() {
+    return readingThreads.size() > 0;
+  }
 
-    private boolean hasWriter(){
-        return writingThread != null;
-    }
+  private boolean isReader(Thread thread) {
+    return readingThreads.get(thread) != null;
+  }
 
-    private boolean isWriter(Thread callingThread){
-        return writingThread == callingThread;
-    }
+  private boolean isOnlyReader(Thread callingThread) {
+    return readingThreads.size() == 1 && readingThreads.get(callingThread) != null;
+  }
 
-    private boolean hasWriteRequests(){
-        return this.writeRequests > 0;
-    }
+  private int getAccessCount(Thread thread) {
+    Integer accessCount = readingThreads.get(thread);
+    return (accessCount == null) ? 0 : accessCount.intValue();
+  }
+
+  private boolean hasWriter() {
+    return writingThread != null;
+  }
+
+  private boolean isWriter(Thread callingThread) {
+    return writingThread == callingThread;
+  }
+
+  private boolean hasWriteRequests() {
+    return this.writeRequests > 0;
+  }
 }

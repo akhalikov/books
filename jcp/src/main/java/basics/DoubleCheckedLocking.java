@@ -28,23 +28,23 @@ package basics;
  */
 class DoubleCheckedLocking {
 
-    /**
-     * Singleton class
-     */
-    static class Something {
+  /**
+   * Singleton class
+   */
+  static class Something {
 
-        private static Something instance = null;
+    private static Something instance = null;
 
-        public static Something getInstance() {
-            if (instance == null) {
-                synchronized (Something.class) {
-                    if (instance == null)
-                        instance = new Something();
-                }
-            }
-            return instance;
+    public static Something getInstance() {
+      if (instance == null) {
+        synchronized (Something.class) {
+          if (instance == null)
+            instance = new Something();
         }
-
-        // ...
+      }
+      return instance;
     }
+
+    // ...
+  }
 }

@@ -6,12 +6,8 @@ package basics.locks;
  * @author ahalikov
  */
 public interface ReadWriteLock {
-
-    void lockRead();
-
-    void unlockRead();
-
-    void lockWrite();
-
-    void unlockWrite();
+  void lockRead();
+  void unlockRead();
+  void lockWrite();
+  void unlockWrite();
 }

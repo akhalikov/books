@@ -18,36 +18,36 @@ package basics.locks;
  */
 public class ReentrantLock implements Lock {
 
-    private boolean isLocked = false;
-    private Thread lockedBy = null;
-    private int lockedCount = 0;
+  private boolean isLocked = false;
+  private Thread lockedBy = null;
+  private int lockedCount = 0;
 
 
-    @Override
-    public synchronized void lock() {
-        Thread callingThread = Thread.currentThread();
-        while (isLocked && lockedBy != callingThread) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                // Interrupted exceptions should not be swallowed
-                // At least, restore the interrupted status like below:
-                Thread.currentThread().interrupt();
-            }
-        }
-        isLocked = true;
-        lockedCount++;
-        lockedBy = callingThread;
+  @Override
+  public synchronized void lock() {
+    Thread callingThread = Thread.currentThread();
+    while (isLocked && lockedBy != callingThread) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        // Interrupted exceptions should not be swallowed
+        // At least, restore the interrupted status like below:
+        Thread.currentThread().interrupt();
+      }
     }
+    isLocked = true;
+    lockedCount++;
+    lockedBy = callingThread;
+  }
 
-    @Override
-    public synchronized void unlock() {
-        if (Thread.currentThread() == this.lockedBy) {
-            lockedCount--;
-            if (lockedCount == 0) {
-                isLocked = false;
-                notify();
-            }
-        }
+  @Override
+  public synchronized void unlock() {
+    if (Thread.currentThread() == this.lockedBy) {
+      lockedCount--;
+      if (lockedCount == 0) {
+        isLocked = false;
+        notify();
+      }
     }
+  }
 }
