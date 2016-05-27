@@ -80,11 +80,43 @@ See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/Re
 
 #### 7.1.5. Cancellation Via Future
 
+You should not interrupt a pool thread directly when attempting to cancel a task, because you won't know what task is running when the interrupt request is delivered. 
+Do this only through the task's `Future`. This is yet another reason to code tasks to treat interruption as a cancellation request: then they can be cancelled through their `Futures`.
+
+Listing 7.10 shows a version of timedRun that submits the task to an ExecutorService and retrieves the result with a timed `Future.get`. 
+If get terminates with a TimeoutException, the task is cancelled via its Future. 
+(To simplify coding, this version calls `Future.cancel` unconditionally in a `finally` block, taking advantage of the fact that cancelling a completed task has no effect.)
+
+Listing 7.10. Cancelling a Task Using Future.
+
+See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/TimedRun.java
+
+> When Future.get throws `InterruptedException` or `TimeoutException` and you know that the result is no longer needed by the program, cancel the task with `Future.cancel`.
+
 #### 7.1.6. Dealing with Non-interruptible Blocking
 
 #### 7.1.7. Encapsulating Nonstandard Cancellation with Newtaskfor
  
-### 7.2. Stopping a Thread-based Service 
+### 7.2. Stopping a Thread-based Service
+ 
+#### 7.2.1. Example: A Logging Service
+
+LogWriter in Listing 7.13 shows a simple logging service in which the logging activity is moved to a separate logger thread. 
+Instead of having the thread that produces the message write it directly to the output stream, `LogWriter` hands it off to the logger thread via a `BlockingQueue` and the logger thread writes it out. 
+This is a multiple-producer, single-consumer design: any activity calling log is acting as a producer, and the background logger thread is the consumer. 
+If the logger thread falls behind, the `BlockingQueue` eventually blocks the producers until the logger thread catches up.
+
+Listing 7.13. Producer-Consumer Logging Service with No Shutdown Support.
+
+See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/LogWriter.java
+
+Listing 7.15. Adding Reliable Cancellation to LogWriter.
+
+See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/LogService1.java
+
+Listing 7.16. Logging Service that Uses an ExecutorService.
+
+See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/LogService2.java
 
 ### 7.3. Handling Abnormal Thread Termination
 
@@ -102,7 +134,7 @@ Finally, they should **exit as quickly as possible**, since their existence dela
 
 Listing 7.26. Registering a Shutdown Hook to Stop the Logging Service.
 
-See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/LogService.java
+See https://github.com/akhalikov/books/blob/master/jcp/src/main/java/chapter7/LogServiceShutdownHook.java
 
 #### 7.4.2. Daemon Threads
 

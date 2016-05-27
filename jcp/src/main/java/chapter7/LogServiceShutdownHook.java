@@ -3,7 +3,7 @@ package chapter7;
 /**
  * Listing 7.26. Registering a Shutdown Hook to Stop the Logging Service
  */
-class LogService {
+class LogServiceShutdownHook {
   /**
    * Start logging service
    */
@@ -14,7 +14,7 @@ class LogService {
       @Override
       public void run() {
         try {
-          LogService.this.stop();
+          LogServiceShutdownHook.this.stop();
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         }
