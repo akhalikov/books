@@ -1,4 +1,4 @@
-Chapter 6 Review
+Chapter 6: Task Execution
 ===
 
 > Tasks - independent activities (in ideal).

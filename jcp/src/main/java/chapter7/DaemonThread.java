@@ -48,6 +48,7 @@ public class DaemonThread {
 
       // Scheduling cache update
       Executors.newSingleThreadScheduledExecutor((Runnable r) -> {
+        // Let's give our thread descriptive name
         Thread thread = new Thread(r, "DataFetchingService_CacheUpdater");
 
         // If we make this thread daemon - it will be managed by JVM and properly closed on JVM shutdown.
