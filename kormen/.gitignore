@@ -1,0 +1,71 @@
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages, Debian packaging, temp
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+/parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+pip-log.txt
+_tmp/
+node_modules/
+
+debian/*
+!debian/changelog
+!debian/compat
+!debian/control
+!debian/copyright
+!debian/dirs
+!debian/hhapi.init
+!debian/hhapi.install
+!debian/hhapi-static.install
+!debian/hhapi-static.postinst
+!debian/logrotate
+!debian/*.sh
+!debian/rules
+!debian/source/format
+!debian/source/options
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Jetbrains
+.idea
+*.iml
+atlassian-ide-plugin.xml
+
+# Mac OS X junk
+.AppleDouble
+.DS_Store
+Icon?
+.Spotlight-V100
+.Trashes
+
+# Windows junk
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# user defined config
+hhapi-dev.cfg
+config/*.cfg
+
+# Testing
+venv/
+/artifacts/
