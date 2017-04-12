@@ -1,11 +1,14 @@
-import java.util.*;
+package chapter03.item9;
+
+import java.util.HashMap;
+import java.util.Map;
 
 final class PhoneNumber {
 	private final short areaCode;
 	private final short prefix;
 	private final short lineNumber;
 
-	public PhoneNumber(int areaCode, int prefix, int lineNumber) {
+	private PhoneNumber(int areaCode, int prefix, int lineNumber) {
 		rangeCheck(areaCode, 999, "area code");
 		rangeCheck(prefix, 999, "prefix");
 		rangeCheck(lineNumber, 9999, "line number");
@@ -20,9 +23,8 @@ final class PhoneNumber {
 			throw new IllegalArgumentException(name + ": " + arg);
 	}
 
-	@Override public boolean equals(
-
-		Object o) {
+	@Override
+	public boolean equals(Object o) {
 		if (o == this)
 			return true;
 		if (!(o instanceof PhoneNumber))
@@ -36,7 +38,7 @@ final class PhoneNumber {
 
 	public static void main(String[] args) {
 		System.out.println("Test of PhoneNumber without hashCode() being implemented");
-		Map<PhoneNumber, String> m = new HashMap<PhoneNumber, String>();
+		Map<PhoneNumber, String> m = new HashMap<>();
 		m.put(new PhoneNumber(707, 867, 5309), "Jenny");
 
 		// prints null as hashCode is not implemented
