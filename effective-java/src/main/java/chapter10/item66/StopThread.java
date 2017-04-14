@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 class StopThread {
 
   // although reads and writes to boolean are atomic operations,
-  // it does not guarantee that a value written by one thread will be visible to another.
+  // that does not guarantee that a value written by one thread will be visible to another.
   private static boolean stopRequested;
 
   private static long iterations = 0;
@@ -30,7 +30,7 @@ class StopThread {
       }
     });
 
-    // with no synchronization, compiler (JIT ?) can optimizes this code to the following:
+    // without synchronization, compiler (JIT ?) can optimizes this code to the following:
     // if (!stopRequested)
     //   while (true)
     //     i++;

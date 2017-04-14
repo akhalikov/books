@@ -3,7 +3,10 @@ package chapter10.item66;
 import java.util.concurrent.TimeUnit;
 
 public class StopThreadVolatile {
+
+  // using volatile in order to guarantee proper visibility
   private static volatile boolean stopRequested;
+
   private static int iterations = 0;
 
   public static void main(String[] args) throws InterruptedException {
