@@ -14,10 +14,11 @@ class StopThread {
   // it does not guarantee that a value written by one thread will be visible to another.
   private static boolean stopRequested;
 
+  private static long iterations = 0;
+
   public static void main(String[] args) throws InterruptedException {
 
     Thread backgroundThread = new Thread(() -> {
-      int i = 0;
       while (!stopRequested) {  // problem: there is no guarantee that backgroundThread
                                 //          will see the change in the value of stopRequested.
 
@@ -25,7 +26,7 @@ class StopThread {
         // maybe because println uses synchronization inside
         // System.out.println(currentThread().getName() + ": i=" + i);
 
-        i++;
+        iterations++;
       }
     });
 
@@ -38,10 +39,12 @@ class StopThread {
 
     backgroundThread.start();
 
-    TimeUnit.SECONDS.sleep(1);
+    TimeUnit.MILLISECONDS.sleep(10);
 
     stopRequested = true;
 
     // the result is liveness failure: the program fails to make progress.
+
+    System.out.println("iterations=" + iterations);
   }
 }

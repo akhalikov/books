@@ -1,7 +1,5 @@
 package chapter10.item66;
 
-import static java.lang.Thread.currentThread;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -14,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 public class StopThreadSynchronized {
 
   private static boolean stopRequested;
+
+  private static long iterations = 0;
 
   // write synchronization
   // though reads and writes to boolean field are atomic, we still need synchronization
@@ -32,17 +32,17 @@ public class StopThreadSynchronized {
   public static void main(String[] args) throws InterruptedException {
 
     Thread backgroundThread = new Thread(() -> {
-      int i = 0;
       while (!isStopRequested()) {
-        i++;
-        System.out.println(currentThread().getName() + ": i=" + i);
+        iterations++;
       }
     });
 
     backgroundThread.start();
 
-    TimeUnit.SECONDS.sleep(1);
+    TimeUnit.MILLISECONDS.sleep(10);
 
-    requestStop(); // will stop at i ~ 150,000
+    requestStop();
+
+    System.out.println("iterations=" + iterations);
   }
 }
