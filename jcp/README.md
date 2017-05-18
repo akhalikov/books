@@ -1,15 +1,15 @@
-###Java Concurrency In Practice 
+### Java Concurrency In Practice 
 
 Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
 
 ***
 
-#####Other books:
+##### Other books:
 
 * Doug Lea: [Concurrent Programming in Java: Design Principles and Pattern](http://www.amazon.com/Concurrent-Programming-Java-Principles-Pattern/dp/0201310090/)
 * Maurice Herlihy, Nir Shavit: [The Art of Multiprocessor Programming](http://www.amazon.com/The-Multiprocessor-Programming-Revised-Reprint/dp/0123973376/)
 
-#####Useful resources about concurrency:
+##### Useful resources about concurrency:
 
 * Jeremy Manson, Brian Goetz: [JSR-133 FAQ](https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html)
 * Martin Thompson, etc, [Disruptor: High performance alternative to bounded queues for exchanging data between concurrent threads](http://disruptor.googlecode.com/files/Disruptor-1.0.pdf)
@@ -33,7 +33,7 @@ Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
 * [5 Things You Didn’t Know About Synchronization in Java and Scala](http://blog.takipi.com/5-things-you-didnt-know-about-synchronization-in-java-and-scala/)
 * [Как работает ConcurrentHashMap](http://habrahabr.ru/post/132884/)
 
-#####Blogs:
+##### Blogs:
 
 * [Martin Thompson: Mechanical Sympathy](http://mechanical-sympathy.blogspot.com/)
 * [Jenkov: Java Concurrency / Multithreading Tutorial](http://tutorials.jenkov.com/java-concurrency)
@@ -41,7 +41,7 @@ Examples and notes from "Java Concurrency In Practice" book bu Doug Lee.
 * [Java Specialist](http://www.javaspecialist.ru)
 * [Golovach courses](http://habrahabr.ru/company/golovachcourses/blog/215275)
 
-#####Interview FAQ:
+##### Interview FAQ:
 
 * http://javadecodedquestions.blogspot.ru/2012/01/java-concurrency.html
 * http://www.journaldev.com/1162/java-multi-threading-concurrency-interview-questions-with-answers
