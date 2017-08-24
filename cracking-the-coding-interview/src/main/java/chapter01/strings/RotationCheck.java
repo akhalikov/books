@@ -11,7 +11,7 @@ class RotationCheck {
   /**
    * Checks if s1 is a rotation of s2
    */
-  public static boolean isRotation(String s1, String s2) {
+  static boolean isRotation(String s1, String s2) {
     if (s1.length() != s2.length())
       return false;
 

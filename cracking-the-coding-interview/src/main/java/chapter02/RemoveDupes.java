@@ -15,8 +15,9 @@ class RemoveDupes {
    * Runtime: O(n), memory: O(n)
    */
   static void removeDupes(Node head) {
-    if (head == null || head.next == null)
+    if (head == null || head.next == null) {
       return;
+    }
     Node curr = head.next, prev = head;
     HashSet<Integer> seen = new HashSet<>();
     while (curr != null) {
@@ -37,8 +38,9 @@ class RemoveDupes {
    * Runtime - O(n^2), memory - O(1)
    */
   static void removeDupes2(Node head) {
-    if (head == null || head.next == null)
+    if (head == null || head.next == null) {
       return;
+    }
     Node curr = head;
     while (curr != null) {
       Node runner = curr;

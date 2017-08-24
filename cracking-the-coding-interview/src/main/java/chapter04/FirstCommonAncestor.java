@@ -13,15 +13,10 @@ import algo.tree.Tree.Node;
  *  So there are two cases:
  *    1. with links to parents
  *    2. without links to parents, with root
- *
- * @author akhalikov
  */
-public class FirstCommonAncestor {
+class FirstCommonAncestor {
   /**
    * Assuming we have links to parents
-   * @param a
-   * @param b
-   * @return
    */
   static Node findWithParent(Node a, Node b) {
     int levelA = findLevel(a);

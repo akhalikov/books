@@ -6,11 +6,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Test for {@link SumLists2}
- *
- * @author akhalikov
- */
 public class SumLists2Test {
   /**
    * (7 1 6) + (5 9 2) = (2 1 9)

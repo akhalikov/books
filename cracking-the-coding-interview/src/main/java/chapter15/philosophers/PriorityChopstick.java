@@ -1,16 +1,13 @@
 package chapter15.philosophers;
 
-/**
- * A chopstick
- */
-public class PriorityChopstick extends Chopstick {
+class PriorityChopstick extends Chopstick {
   private int priority;
 
-  public PriorityChopstick(int priority) {
+  PriorityChopstick(int priority) {
     this.priority = priority;
   }
 
-  public int getPriority() {
+  int getPriority() {
     return priority;
   }
 }

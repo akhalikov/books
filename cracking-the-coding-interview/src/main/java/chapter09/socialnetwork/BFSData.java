@@ -7,17 +7,17 @@ import java.util.Queue;
 /**
  * BFS data
  */
-public class BFSData {
-  public Queue<PathNode> toVisit = new LinkedList<>();
-  public HashMap<Integer, PathNode> visited = new HashMap<>();
+class BFSData {
+  Queue<PathNode> toVisit = new LinkedList<>();
+  HashMap<Integer, PathNode> visited = new HashMap<>();
 
-  public BFSData(Person root) {
+  BFSData(Person root) {
     PathNode sourcePath = new PathNode(root, null);
     toVisit.add(sourcePath);
     visited.put(root.getId(), sourcePath);
   }
 
-  public boolean isFinished() {
+  boolean isFinished() {
     return toVisit.isEmpty();
   }
 }

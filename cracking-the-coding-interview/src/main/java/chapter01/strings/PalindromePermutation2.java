@@ -3,7 +3,7 @@ package chapter01.strings;
 /**
  * Small optimization for {@link PalindromePermutation}
  */
-public class PalindromePermutation2 {
+class PalindromePermutation2 {
 
   /**
    * Assumptions:

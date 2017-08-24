@@ -6,13 +6,12 @@ package chapter15.philosophers;
  * Such design exposes appearance of potential deadlocks
  */
 public class EagerStrategy {
-
   public static void main(String[] args) {
     for (int i = 0; i < 1_000; ++i)
       startDinner();
   }
 
-  static void startDinner() {
+  private static void startDinner() {
     Chopstick chopstick1 = new Chopstick();
     Chopstick chopstick2 = new Chopstick();
     Chopstick chopstick3 = new Chopstick();

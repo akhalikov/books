@@ -22,15 +22,12 @@ package chapter10.sortedsearch;
  *
  *  Input: 1 3 4 5 8 8 10 15 23, x = 155
  *  Output: -1
- *
- * Created by artur on 20.01.16.
  */
-public class SortedSearch {
+class SortedSearch {
 
   static int find(Listy listy, int value) {
     int index = 1;
-    while (listy.elementAt(index) > 0
-        && listy.elementAt(index) < value) {
+    while (listy.elementAt(index) > 0 && listy.elementAt(index) < value) {
       index *= 2;
     }
     return binarySeach(listy, value, 0, index);
@@ -39,21 +36,19 @@ public class SortedSearch {
   /**
    * Modified binary search
    */
-  static int binarySeach(Listy listy, int value,
-                         int fromIndex, int toIndex) {
-    int low = fromIndex,
-      high = toIndex;
+  private static int binarySeach(Listy listy, int value, int fromIndex, int toIndex) {
 
-    while (low <= high) {
-      int midIndex = (low + high) / 2;
+    while (fromIndex <= toIndex) {
+      int midIndex = (fromIndex + toIndex) / 2;
       int midVal = listy.elementAt(midIndex);
 
-      if (midVal == value)
+      if (midVal == value) {
         return midIndex;
-      else if (midVal < 0 || midVal > value)
-        return binarySeach(listy, value, fromIndex, midIndex-1);
-      else if (midVal < value)
-        return binarySeach(listy, value, midIndex+1, toIndex);
+      } else if (midVal < 0 || midVal > value) {
+        return binarySeach(listy, value, fromIndex, midIndex - 1);
+      } else if (midVal < value) {
+        return binarySeach(listy, value, midIndex + 1, toIndex);
+      }
     }
     return -1;
   }

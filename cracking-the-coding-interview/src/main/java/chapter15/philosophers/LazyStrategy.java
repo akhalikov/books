@@ -7,9 +7,7 @@ package chapter15.philosophers;
  * they will put down their left chopsticks if the right one is unavailable.
  */
 public class LazyStrategy {
-
   public static void main(String[] args) {
-
     Chopstick chopstick1 = new LazyChopstick();
     Chopstick chopstick2 = new LazyChopstick();
     Chopstick chopstick3 = new LazyChopstick();

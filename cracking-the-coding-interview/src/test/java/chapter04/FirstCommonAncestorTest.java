@@ -8,11 +8,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link FirstCommonAncestor}
- *
- * @author akhalikov
- */
 public class FirstCommonAncestorTest {
   @Test
   public void testFindWithParent() throws Exception {

@@ -13,7 +13,7 @@ package chapter01.strings;
  *  - ASCII or Unicode ?
  *  - Can I use additional buffer ?
  */
-public class PalindromePermutation {
+class PalindromePermutation {
 
   /**
    * Assumptions:

@@ -6,7 +6,7 @@ package chapter04;
  *
  * BST: all left items <= n < right elements
  */
-public class MinimalTree {
+class MinimalTree {
 
   static Node createTreeFromArray(int[] a) {
     if (a == null)

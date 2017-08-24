@@ -6,11 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link SortStack}
- *
- * @author akhalikov
- */
 public class SortStackTest {
   @Test
   public void testSort() throws Exception {

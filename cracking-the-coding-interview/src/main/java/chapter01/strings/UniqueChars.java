@@ -9,8 +9,6 @@ package chapter01.strings;
  * - for alphabetic string: are letters in one case (lower/upper), or not ?
  * - are we allowed to modify the input string ?
  * - memory restrictions ?
- *
- * @author akhalikov
  */
 class UniqueChars {
   /**

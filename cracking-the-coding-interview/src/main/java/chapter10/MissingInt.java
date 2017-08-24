@@ -9,8 +9,6 @@ package chapter10;
  *  What if you have only 10 MB of memory?
  *  Assume that all the values are distinct and we now have no more
  *  than one billion non-negative integers.
- *
- * Created by artur on 20.01.16.
  */
 public class MissingInt {
 }

@@ -4,11 +4,6 @@ import algo.queue.Queue;
 import static junit.framework.Assert.*;
 import org.junit.Test;
 
-/**
- * Test for {@link QueueVia2Stacks}
- *
- * @author akhalikov
- */
 public class QueueVia2StacksTest {
   @Test
   public void testAddRemove() throws Exception {

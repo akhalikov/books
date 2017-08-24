@@ -6,9 +6,6 @@ import java.util.Set;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link PermutationsWithDupes}
- */
 public class PermutationsWithDupesTest {
   @Test
   public void testUnique() {

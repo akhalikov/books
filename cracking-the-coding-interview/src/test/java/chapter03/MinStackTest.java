@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link MinStack}
- *
- * @author ahalikov
- */
 public class MinStackTest {
   @Test
   public void testPop() throws Exception {

@@ -20,7 +20,6 @@ public class BlackJackHand extends Hand<BlackJackCard> {
   /**
    * Return a list of all possible scores that hand could have (evaluating
    * each ace as both 1 or 11)
-   * @return
    */
   private ArrayList<Integer> possibleScores() {
     // ...

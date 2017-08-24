@@ -18,11 +18,11 @@ public class Person {
     return name;
   }
 
-  public int getId() {
+  int getId() {
     return id;
   }
 
-  public List<Integer> getFriends() {
+  List<Integer> getFriends() {
     return friends;
   }
 }

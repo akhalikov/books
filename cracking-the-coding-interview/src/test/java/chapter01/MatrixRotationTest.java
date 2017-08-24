@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link MatrixRotation}
- *
- * Created by akhalikov on 31/01/16
- */
 public class MatrixRotationTest {
   @Test
   public void testRotate() throws Exception {

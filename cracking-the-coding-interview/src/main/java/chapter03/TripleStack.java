@@ -2,10 +2,8 @@ package chapter03;
 
 /**
  * Implement three stacks using a single array
- *
- * @author akhalikov
  */
-public class TripleStack<E> {
+class TripleStack<E> {
   private static final int INITIAL_CAPACITY = 30;
 
   private Object[] elements;
@@ -14,14 +12,12 @@ public class TripleStack<E> {
   private final int[] headIndex = new int[4];
   private final int[] bottomIndex = new int[4];
 
-  public TripleStack() {
+  TripleStack() {
     elements = new Object[INITIAL_CAPACITY];
   }
 
   /**
    * Push to stack #stackId
-   * @param item
-   * @param stackId
    */
   void push(E item, int stackId) {
     if (stackId > 1)
@@ -33,8 +29,6 @@ public class TripleStack<E> {
 
   /**
    * Pop from stack #stackId
-   * @param stackId
-   * @return stack item
    */
   E pop(int stackId) {
     if (isEmpty(stackId))

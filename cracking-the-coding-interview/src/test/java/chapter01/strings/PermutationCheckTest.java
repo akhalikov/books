@@ -1,76 +1,74 @@
 package chapter01.strings;
 
+import static chapter01.strings.PermutationCheck.isPermutation;
+import static chapter01.strings.PermutationCheck.isPermutation2;
+import static chapter01.strings.PermutationCheck.isPermutation3;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Test for {@link PermutationCheck}
- *
- * @author akhalikov
- */
 public class PermutationCheckTest {
   @Test
   public void testIsPermutation() throws Exception {
-    assertTrue(PermutationCheck.isPermutation("abc", "bca"));
-    assertTrue(PermutationCheck.isPermutation("abc", "cab"));
-    assertTrue(PermutationCheck.isPermutation("abc", "cba"));
-    assertTrue(PermutationCheck.isPermutation("abc", "bac"));
-    assertTrue(PermutationCheck.isPermutation("abc", "acb"));
-    assertTrue(PermutationCheck.isPermutation("aabTT", "TabTa"));
+    assertTrue(isPermutation("abc", "bca"));
+    assertTrue(isPermutation("abc", "cab"));
+    assertTrue(isPermutation("abc", "cba"));
+    assertTrue(isPermutation("abc", "bac"));
+    assertTrue(isPermutation("abc", "acb"));
+    assertTrue(isPermutation("aabTT", "TabTa"));
 
-    assertFalse(PermutationCheck.isPermutation("abc", ""));
+    assertFalse(isPermutation("abc", ""));
 
     // Case sensitive permutation
-    assertFalse(PermutationCheck.isPermutation("abc", "bCa"));
+    assertFalse(isPermutation("abc", "bCa"));
 
-    assertFalse(PermutationCheck.isPermutation("abc", "abbc"));
-    assertFalse(PermutationCheck.isPermutation("abc", "aec"));
-    assertFalse(PermutationCheck.isPermutation("abc", "AAA"));
+    assertFalse(isPermutation("abc", "abbc"));
+    assertFalse(isPermutation("abc", "aec"));
+    assertFalse(isPermutation("abc", "AAA"));
 
     // Unicode
-    assertTrue(PermutationCheck.isPermutation("русский287", "йрс7скуи82"));
+    assertTrue(isPermutation("русский287", "йрс7скуи82"));
   }
 
   @Test
   public void testIsPermutation2() throws Exception {
-    assertTrue(PermutationCheck.isPermutation2("abc", "bca"));
-    assertTrue(PermutationCheck.isPermutation2("abc", "cab"));
-    assertTrue(PermutationCheck.isPermutation2("abc", "cba"));
-    assertTrue(PermutationCheck.isPermutation2("abc", "bac"));
-    assertTrue(PermutationCheck.isPermutation2("abc", "acb"));
-    assertTrue(PermutationCheck.isPermutation2("aabTT", "TabTa"));
+    assertTrue(isPermutation2("abc", "bca"));
+    assertTrue(isPermutation2("abc", "cab"));
+    assertTrue(isPermutation2("abc", "cba"));
+    assertTrue(isPermutation2("abc", "bac"));
+    assertTrue(isPermutation2("abc", "acb"));
+    assertTrue(isPermutation2("aabTT", "TabTa"));
 
-    assertFalse(PermutationCheck.isPermutation2("abc", ""));
+    assertFalse(isPermutation2("abc", ""));
 
     // Case sensitive permutation
-    assertFalse(PermutationCheck.isPermutation2("abc", "bCa"));
+    assertFalse(isPermutation2("abc", "bCa"));
 
-    assertFalse(PermutationCheck.isPermutation2("abc", "abbc"));
-    assertFalse(PermutationCheck.isPermutation2("abc", "aec"));
-    assertFalse(PermutationCheck.isPermutation2("abc", "AAA"));
+    assertFalse(isPermutation2("abc", "abbc"));
+    assertFalse(isPermutation2("abc", "aec"));
+    assertFalse(isPermutation2("abc", "AAA"));
 
     // Unicode
-    assertTrue(PermutationCheck.isPermutation2("14русский", "йр4сскуи1"));
+    assertTrue(isPermutation2("14русский", "йр4сскуи1"));
   }
 
   @Test
   public void testIsPermutation3() throws Exception {
-    assertTrue(PermutationCheck.isPermutation3("abc", "bca"));
-    assertTrue(PermutationCheck.isPermutation3("abc", "cab"));
-    assertTrue(PermutationCheck.isPermutation3("abc", "cba"));
-    assertTrue(PermutationCheck.isPermutation3("abc", "bac"));
-    assertTrue(PermutationCheck.isPermutation3("abc", "acb"));
-    assertTrue(PermutationCheck.isPermutation3("aabTT", "TabTa"));
+    assertTrue(isPermutation3("abc", "bca"));
+    assertTrue(isPermutation3("abc", "cab"));
+    assertTrue(isPermutation3("abc", "cba"));
+    assertTrue(isPermutation3("abc", "bac"));
+    assertTrue(isPermutation3("abc", "acb"));
+    assertTrue(isPermutation3("aabTT", "TabTa"));
 
-    assertFalse(PermutationCheck.isPermutation3("abc", ""));
+    assertFalse(isPermutation3("abc", ""));
 
     // Case sensitive permutation
-    assertFalse(PermutationCheck.isPermutation3("abc", "bCa"));
+    assertFalse(isPermutation3("abc", "bCa"));
 
-    assertFalse(PermutationCheck.isPermutation3("abc", "abbc"));
-    assertFalse(PermutationCheck.isPermutation3("abc", "aec"));
-    assertFalse(PermutationCheck.isPermutation3("abc", "AAA"));
+    assertFalse(isPermutation3("abc", "abbc"));
+    assertFalse(isPermutation3("abc", "aec"));
+    assertFalse(isPermutation3("abc", "AAA"));
   }
 }

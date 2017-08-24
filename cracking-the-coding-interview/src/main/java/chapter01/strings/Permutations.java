@@ -11,8 +11,6 @@ import java.util.Set;
  * To eliminate duplicates, I use Set data structure.
  *
  * Follow up 2: Count all combinations of all sub-lengths
- *
- * @author akhalikov
  */
 class Permutations {
   private static Set<String> perms;

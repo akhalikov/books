@@ -11,10 +11,12 @@ class ArrayPairSum {
    * O (n log n) solution
    */
   static int findPairs(int[] arr, int k) {
-    if (arr == null)
+    if (arr == null) {
       throw new IllegalArgumentException("arr is null");
-    if (arr.length < 2)
+    }
+    if (arr.length < 2) {
       return 0;
+    }
     Arrays.sort(arr);
     int i = 0,
       j = arr.length - 1,

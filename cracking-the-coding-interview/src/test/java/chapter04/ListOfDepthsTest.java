@@ -7,11 +7,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link ListOfDepths}
- * 
- * @author akhalikov
- */
 public class ListOfDepthsTest {
   @Test
   public void testGetListOfDepths() throws Exception {

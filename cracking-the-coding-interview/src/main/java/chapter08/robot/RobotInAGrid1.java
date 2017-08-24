@@ -18,7 +18,7 @@ import java.util.List;
  *
  * Time complexity: O(2^(r+c))
  */
-public class RobotInAGrid1 {
+class RobotInAGrid1 {
 
   static List<Point> findPath(boolean[][] grid) {
     if (grid == null || grid.length == 0)
@@ -33,7 +33,7 @@ public class RobotInAGrid1 {
     return null;
   }
 
-  static boolean getPath(boolean[][] grid, int row, int col, List<Point> path) {
+  private static boolean getPath(boolean[][] grid, int row, int col, List<Point> path) {
     if (col < 0 || row < 0 || !grid[row][col])
       return false;
 

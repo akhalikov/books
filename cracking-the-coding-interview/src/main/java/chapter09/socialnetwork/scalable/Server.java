@@ -5,14 +5,12 @@ import java.util.Map;
 
 /**
  * Class Server holds a list of all the machines on which we store Persons
- *
- * Created by akhalikov on 03/03/16
  */
 public class Server {
   private Map<Integer, Machine> machines = new HashMap<>();
   private Map<Integer, Integer> personToMachineMap = new HashMap<>();
 
-  public Machine getMachineWithId(int machineId) {
+  private Machine getMachineWithId(int machineId) {
     return machines.get(machineId);
   }
 

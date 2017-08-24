@@ -19,7 +19,7 @@ public class Playlist {
     return songsQueue.peek();
   }
 
-  public void enqueueSong(Song song) {
+  void enqueueSong(Song song) {
     songsQueue.add(song);
   }
 

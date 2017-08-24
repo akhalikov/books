@@ -1,15 +1,12 @@
 package chapter15.philosophers;
 
-/**
- * Avoiding deadlocks with priorities
- */
-public class PrioritizedStrategy {
+class PrioritizedStrategy {
 
   public static void main(String[] args) {
     startDinner();
   }
 
-  static void startDinner() {
+  private static void startDinner() {
     PriorityChopstick chopstick1 = new PriorityChopstick(1);
     PriorityChopstick chopstick2 = new PriorityChopstick(2);
     PriorityChopstick chopstick3 = new PriorityChopstick(3);

@@ -25,9 +25,6 @@ class SumLists {
   /**
    * Brute-force solution to the first case of reversed lists
    * Time complexity: O(n^2)
-   * @param p Node
-   * @param q Node
-   * @return Node
    */
   static Node sum(Node p, Node q) {
     long x = toNumber(p);
@@ -37,8 +34,6 @@ class SumLists {
 
   /**
    * Time complexity: O(n^2)
-   * @param node
-   * @return
    */
   private static long toNumber(Node node) {
     long num = 0;
@@ -52,7 +47,6 @@ class SumLists {
 
   /**
    * Time complexity: O(n^2)
-   * @param num
    */
   private static Node toList(long num) {
     Node head = new Node();
@@ -71,7 +65,6 @@ class SumLists {
 
   /**
    * Time complexity: O(n)
-   * @param times
    */
   private static long pow10(int times) {
     long n = 1;

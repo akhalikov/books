@@ -7,8 +7,6 @@ package chapter04;
  *
  * Design and implement an algorithm for getRandomNode, and explain how
  * would you implement the rest of the methods.
- *
- * @author akhalikov
  */
 public class RandomNode {
 

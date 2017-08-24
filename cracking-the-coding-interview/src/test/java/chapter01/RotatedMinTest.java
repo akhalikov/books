@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test RotatedMinTest
- */
 public class RotatedMinTest {
   @Test
   public void testFind() {

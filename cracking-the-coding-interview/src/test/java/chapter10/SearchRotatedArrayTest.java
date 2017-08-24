@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link SearchRotatedArray}
- *
- * @author akhalikov
- */
 public class SearchRotatedArrayTest {
   @Test
   public void testSearch() throws Exception {

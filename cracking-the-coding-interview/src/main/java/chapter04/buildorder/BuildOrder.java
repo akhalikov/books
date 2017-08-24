@@ -14,8 +14,6 @@ import java.util.List;
  *  Projects: a, b, c, d, e, f
  *  Dependencies: (d, a), (b, f), (d, b), (a, f), (c, d)
  *  Output: f, e, a, b, d, c
- *
- * Created by akhalikov on 11/03/16
  */
 public class BuildOrder {
   public List<Project> findBuildOrder(BuildGraph graph) {

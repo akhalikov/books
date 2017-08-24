@@ -8,11 +8,6 @@ import java.awt.*;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Test for {@link CheckPalindrome}
- *
- * @author akhalikov
- */
 public class CheckPalindromeTest {
   @Test
   public void testIsPalindrome() throws Exception {

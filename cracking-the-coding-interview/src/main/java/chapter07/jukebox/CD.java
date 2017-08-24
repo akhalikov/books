@@ -3,9 +3,6 @@ package chapter07.jukebox;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * CD
- */
 public class CD {
   private String artist;
   private List<Song> songs;
@@ -29,7 +26,7 @@ public class CD {
     return Optional.empty();
   }
 
-  public List<Song> getSongs() {
+  List<Song> getSongs() {
     return songs;
   }
 }

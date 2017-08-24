@@ -15,10 +15,8 @@ import algo.tree.Tree.Node;
  *    else:
  *      let q be parent of p
  *      go up with q and p until p is not to the left of q: return q
- *
- * @author akhalikov
  */
-public class Successor {
+class Successor {
   static Node getNextNode(Node node) {
     if (node == null)
       return null;

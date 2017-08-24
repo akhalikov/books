@@ -4,17 +4,17 @@ package chapter15.philosophers;
  * Eager philosopher is kind of bad-ass, he either eat with both
  * left and right chopsticks, or wait.
  */
-public class Philosopher implements Runnable {
-  public static final int BITES_NUM = 10;
+class Philosopher implements Runnable {
+  static final int BITES_NUM = 10;
 
   protected int index;
   protected Chopstick left, right;
-  protected int eatCounter = 0;
+  int eatCounter = 0;
 
-  public Philosopher() {
+  Philosopher() {
   }
 
-  public Philosopher(int index, Chopstick left, Chopstick right) {
+  Philosopher(int index, Chopstick left, Chopstick right) {
     this.index = index;
     this.left = left;
     this.right = right;
@@ -27,7 +27,7 @@ public class Philosopher implements Runnable {
     eatCounter++;
   }
 
-  public void chew() {
+  void chew() {
     // eating
   }
 
@@ -37,7 +37,7 @@ public class Philosopher implements Runnable {
     return true;
   }
 
-  public void putDown() {
+  void putDown() {
     right.putDown();
     left.putDown();
   }
@@ -50,7 +50,7 @@ public class Philosopher implements Runnable {
     printFinished();
   }
 
-  protected void printFinished() {
+  private void printFinished() {
     String msg;
     if (eatCounter == 0)
       msg = "left hungry";
@@ -61,7 +61,7 @@ public class Philosopher implements Runnable {
     System.out.println(name() + ": " + msg);
   }
 
-  public String name() {
+  private String name() {
     return "p" + index;
   }
 }

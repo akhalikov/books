@@ -8,8 +8,6 @@ class ZeroMatrix {
   /**
    * Time complexity: O(mn)
    * Space complexity: O(n)
-   * @param matrix
-   * @return
    */
   static void makeZeros(int[][] matrix) {
     int rowsNum = matrix.length,
@@ -36,12 +34,11 @@ class ZeroMatrix {
   /**
    * Time complexity: O(m n)
    * Space complexity: O(1)
-   * @param matrix
-   * @return
    */
   static void makeZeros2(int[][] matrix) {
     int rowsNum = matrix.length,
       colsNum = matrix[0].length;
+
     // check if first row has zeros
     boolean rowHasZero = false;
     for (int j = 0; j < rowsNum; j++) {
@@ -86,12 +83,12 @@ class ZeroMatrix {
       nullifyColumn(matrix, 0);
   }
 
-  static void nullifyRow(int[][] matrix, int row) {
+  private static void nullifyRow(int[][] matrix, int row) {
     for (int j = 0; j < matrix[0].length; j++)
       matrix[row][j] = 0;
   }
 
-  static void nullifyColumn(int[][] matrix, int col) {
+  private static void nullifyColumn(int[][] matrix, int col) {
     for (int i = 0; i < matrix[0].length; i++)
       matrix[i][col] = 0;
   }

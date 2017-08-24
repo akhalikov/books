@@ -1,6 +1,6 @@
 package chapter15.deadlockfree;
 
-public class LockFactory {
+class LockFactory {
   private static LockFactory instance;
 
   private int numberOfLocks = 5;

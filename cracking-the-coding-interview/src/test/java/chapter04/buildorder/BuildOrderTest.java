@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link BuildOrder}
- */
 public class BuildOrderTest {
   @Test
   public void testFindBuildOrder() {

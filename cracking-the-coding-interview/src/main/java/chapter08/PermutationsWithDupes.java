@@ -9,10 +9,8 @@ import java.util.Set;
  * Write a method to compute all the permutations of a string
  * whose characters are not necessarily unique.
  * The list of permutations should not have duplicates.
- *
- * Created by akhalikov on 08/03/16
  */
-public class PermutationsWithDupes {
+class PermutationsWithDupes {
   /**
    * Worst time complexity: O(n!)
    *

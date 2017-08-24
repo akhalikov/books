@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link TripleStack}
- *
- * @author akhalikov
- */
 public class TripleStackTest {
   @Test
   public void testPush() throws Exception {

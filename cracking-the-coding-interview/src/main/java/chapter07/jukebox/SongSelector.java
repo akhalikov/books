@@ -3,11 +3,6 @@ package chapter07.jukebox;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Device that selects song
- *
- * Created by akhalikov on 23/03/16
- */
 public class SongSelector {
   private CDPlayer cdPlayer;
   private Song currentSong;

@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * @author akhalikov
- */
 public class BasicCompressionTest {
 
   @Test

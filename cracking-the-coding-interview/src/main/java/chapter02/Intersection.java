@@ -8,10 +8,8 @@ import chapter02.LinkedList.Node;
  *
  * That is, if k-th node of first LL is the exact same node (by ref) as the j-th node of the second LL,
  * then they're intersecting.
- *
- * @author akhalikov
  */
-public class Intersection {
+class Intersection {
   static Node findIntersection(Node first, Node second) {
     int len1 = length(first);
     int len2 = length(second);

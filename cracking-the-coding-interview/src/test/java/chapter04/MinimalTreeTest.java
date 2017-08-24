@@ -1,19 +1,15 @@
 package chapter04;
 
+import static chapter04.MinimalTree.createTreeFromArray;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link MinimalTree}
- *
- * @author akhalikov
- */
 public class MinimalTreeTest {
   @Test
   public void testCreateTreeFromArray() throws Exception {
     int[] a = {1, 2, 3, 4, 5, 8, 13, 15};
-    MinimalTree.Node tree = MinimalTree.createTreeFromArray(a);
+    MinimalTree.Node tree = createTreeFromArray(a);
     assertEquals(4, tree.data);
     // left sub-tree
     assertEquals(2, tree.left.data);

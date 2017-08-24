@@ -7,11 +7,6 @@ import java.util.Set;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link Permutations}
- *
- * Created by artur on 22.01.16.
- */
 public class PermutationsTest {
   @Test
   public void testFind() throws Exception {

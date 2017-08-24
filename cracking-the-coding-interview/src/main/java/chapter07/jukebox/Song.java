@@ -1,8 +1,5 @@
 package chapter07.jukebox;
 
-/**
- * Song
- */
 public class Song {
 
   private int id;
@@ -17,11 +14,11 @@ public class Song {
     this.length = length;
   }
 
-  public int getId() {
+  int getId() {
     return id;
   }
 
-  public String getTitle() {
+  String getTitle() {
     return title;
   }
 }

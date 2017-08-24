@@ -3,11 +3,6 @@ package chapter02;
 import chapter02.LinkedList.Node;
 import org.junit.Test;
 
-/**
- * Test for {@link ListPartition}
- *
- * @author akhalikov
- */
 public class ListPartitionTest {
   @Test
   public void testPartition() throws Exception {

@@ -1,10 +1,5 @@
 package chapter02;
 
-/**
- * Basic linked list implementation
- *
- * Created by akhalikov on 11/03/16
- */
 public class LinkedList {
   Node head;
   int size;
@@ -12,7 +7,7 @@ public class LinkedList {
   public LinkedList() {
   }
 
-  public static LinkedList fromArray(int...data) {
+  static LinkedList fromArray(int... data) {
     LinkedList list = new LinkedList();
     Node prev = null;
     for (int i = 0; i < data.length; i++) {
@@ -27,7 +22,7 @@ public class LinkedList {
     return list;
   }
 
-  public Node[] toArray() {
+  Node[] toArray() {
     Node[] nodes = new Node[size];
     Node curr = head;
     for (int i = 0; i < size; i++) {

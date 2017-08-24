@@ -9,10 +9,8 @@ import chapter02.LinkedList.Node;
  *
  * Assumptions:
  *  - singly-linked list
- *
- * @author akhalikov
  */
-public class CheckPalindrome {
+class CheckPalindrome {
   /**
    * Algorithm:
    *  - push first half into stack
@@ -25,8 +23,9 @@ public class CheckPalindrome {
    * @return true if LL is palindrome
    */
   static boolean isPalindrome(Node head) {
-    if (head == null)
+    if (head == null) {
       throw new NullPointerException("List is null");
+    }
     Stack<Integer> stack = new LinkedStack<>();
     Node n = head;
     int len = getLength(head),
@@ -53,9 +52,9 @@ public class CheckPalindrome {
    * @return true if LL is palindrome
    */
   static boolean isPalindrome2(Node head) {
-    if (head == null)
+    if (head == null) {
       throw new NullPointerException("List is null");
-
+    }
     Stack<Integer> stack = new LinkedStack<>();
     Node fast = head, slow = head;
     while (fast != null && fast.next != null) {

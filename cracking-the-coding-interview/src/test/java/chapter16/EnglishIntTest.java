@@ -1,31 +1,27 @@
 package chapter16;
 
+import static chapter16.EnglishInt.intToPhrase;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test EnglishIntTest
- */
 public class EnglishIntTest {
   @Test
   public void testSmalls() {
-    assertEquals("zero", EnglishInt.intToPhrase(0));
-    assertEquals("eight", EnglishInt.intToPhrase(8));
-    assertEquals("ten", EnglishInt.intToPhrase(10));
+    assertEquals("zero", intToPhrase(0));
+    assertEquals("eight", intToPhrase(8));
+    assertEquals("ten", intToPhrase(10));
   }
 
   @Test
   public void testThousand() {
-    assertEquals(
-      "one thousand two hundred thirty four",
-      EnglishInt.intToPhrase(1_234));
+    assertEquals("one thousand two hundred thirty four",
+      intToPhrase(1_234));
   }
 
   //@Test
   public void testBigs() {
-    assertEquals(
-      "hundred millions thirty thousands",
-      EnglishInt.intToPhrase(100_030_000));
+    assertEquals("hundred millions thirty thousands",
+      intToPhrase(100_030_000));
   }
 }

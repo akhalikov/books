@@ -4,10 +4,8 @@ package chapter08;
  * A magic index in an array A is defined to be an index,
  * such that A[i] = i. Given a sorted array of distinct integers,
  * write a method to find a magic index, if it is exist in array A.
- *
- * Created by akhalikov on 29/02/16
  */
-public class MagicIndex {
+class MagicIndex {
 
   /**
    * Run-time complexity: O(log n)

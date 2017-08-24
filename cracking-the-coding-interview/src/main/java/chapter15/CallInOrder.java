@@ -7,7 +7,6 @@ import java.util.concurrent.Semaphore;
  * threadA will call first(), threadB will call second(), and threadC will call third().
  * Design a mechanism to ensure that first() is called before second(),
  * and second() is called before third().
- *
  */
 public class CallInOrder {
   public static void main(String[] args) throws Exception {

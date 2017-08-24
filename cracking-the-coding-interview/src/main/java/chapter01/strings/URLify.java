@@ -5,10 +5,8 @@ package chapter01.strings;
  * Questions to interviewer:
  *  - do I have a enough space at the end of the string (for in-place modifications) ?
  *  - do I know the real length of the string ?
- *
- * @author akhalikov
  */
-public class URLify {
+class URLify {
 
   /**
    * Assumptions:

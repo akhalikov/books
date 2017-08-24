@@ -1,24 +1,20 @@
 package chapter04;
 
 import algo.graphs.Graph;
+import static chapter04.GraphRoute.hasRoute;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link GraphRoute}
- *
- * @author akhalikov
- */
 public class GraphRouteTest {
   @Test
   public void testHasRoute() throws Exception {
     Graph g = createTestGraph();
-    assertTrue("true: 1->4", GraphRoute.hasRoute(g, g.getNode(0), g.getNode(3)));
-    assertTrue("true: 1->1", GraphRoute.hasRoute(g, g.getNode(0), g.getNode(0)));
-    assertFalse("false: 1->7", GraphRoute.hasRoute(g, g.getNode(0), g.getNode(6)));
-    assertTrue("true: 6->7", GraphRoute.hasRoute(g, g.getNode(5), g.getNode(6)));
-    assertFalse("true: 7->6", GraphRoute.hasRoute(g, g.getNode(6), g.getNode(5)));
+    assertTrue("true: 1->4", hasRoute(g, g.getNode(0), g.getNode(3)));
+    assertTrue("true: 1->1", hasRoute(g, g.getNode(0), g.getNode(0)));
+    assertFalse("false: 1->7", hasRoute(g, g.getNode(0), g.getNode(6)));
+    assertTrue("true: 6->7", hasRoute(g, g.getNode(5), g.getNode(6)));
+    assertFalse("true: 7->6", hasRoute(g, g.getNode(6), g.getNode(5)));
 
   }
 

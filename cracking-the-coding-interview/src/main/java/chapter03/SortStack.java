@@ -9,7 +9,7 @@ import algo.stack.Stack;
  * any other data structure.
  * The stack supports the following operations: push, pop, peek, isEmpty
  */
-public class SortStack {
+class SortStack {
   /**
    * Time complexity: O(n^2)
    * Space complexity: O(n)

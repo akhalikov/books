@@ -2,8 +2,6 @@ package chapter08.paintfill;
 
 /**
  * Color enum
- *
- * Created by akhalikov on 08/03/16
  */
 public enum Color {
   White(0),

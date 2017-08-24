@@ -1,5 +1,5 @@
 package chapter07.jukebox;
 
-public class User {
+class User {
   private String name;
 }

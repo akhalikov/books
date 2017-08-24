@@ -3,10 +3,8 @@ package chapter01.strings;
 /**
  * Given two strings, write a function to check if they are one edit (or zero edits) away.
  * 3 types of edits: insert, remove, or replace a character.
- *
- * @author akhalikov
  */
-public class OneAway {
+class OneAway {
 
   /**
    * Time and space complexity: O(n)

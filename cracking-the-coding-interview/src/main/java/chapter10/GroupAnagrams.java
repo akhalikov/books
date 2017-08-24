@@ -9,8 +9,6 @@ import java.util.List;
 /**
  * Write a method to sort an array of strings,
  * so that all the anagrams are next to each other.
- *
- * @author ahalikov
  */
 class GroupAnagrams {
   /**
@@ -18,8 +16,7 @@ class GroupAnagrams {
    * @param arr Array of strings
    */
   static void sort(String[] arr) {
-    Arrays.sort(arr,
-      (String s1, String s2) -> sortChars(s1).compareTo(sortChars(s2)));
+    Arrays.sort(arr, Comparator.comparing(GroupAnagrams::sortChars));
   }
 
   /**

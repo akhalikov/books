@@ -3,11 +3,6 @@ package chapter04.buildorder;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * BuildGraph
- *
- * Created by akhalikov on 11/03/16
- */
 public class BuildGraph {
   List<Project> projects = new ArrayList<>();
 

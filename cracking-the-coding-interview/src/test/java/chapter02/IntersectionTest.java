@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link Intersection}
- *
- * @author akhalikov
- */
 public class IntersectionTest {
   @Test
   public void testFindIntersection() throws Exception {

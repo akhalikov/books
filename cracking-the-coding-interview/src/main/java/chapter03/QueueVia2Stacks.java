@@ -11,8 +11,6 @@ import algo.stack.Stack;
  * remove - O(n)
  * peek - O(n)
  * isEmpty - O(1)
- *
- * @author akhalikov
  */
 public class QueueVia2Stacks<E> implements Queue<E> {
   private Stack<E> newest = new LinkedStack<>();

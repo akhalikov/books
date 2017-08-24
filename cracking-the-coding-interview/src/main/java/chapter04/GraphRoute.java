@@ -18,7 +18,7 @@ public class GraphRoute {
       return true;
 
     ensureUnvisited(g);
-    final Queue<Graph.Node> queue = new LinkedQueue();
+    final Queue<Graph.Node> queue = new LinkedQueue<>();
     queue.add(fromNode);
     fromNode.setState(State.Visiting);
 

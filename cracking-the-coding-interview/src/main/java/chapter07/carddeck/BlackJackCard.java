@@ -1,8 +1,5 @@
 package chapter07.carddeck;
 
-/**
- * Created by akhalikov on 19/02/16
- */
 public class BlackJackCard extends Card {
   public BlackJackCard(int faceValue, Suit suit) {
     super(faceValue, suit);
@@ -26,11 +23,11 @@ public class BlackJackCard extends Card {
     return isAce() ? 11: value();
   }
 
-  public boolean isAce() {
+  private boolean isAce() {
     return faceValue == 1;
   }
 
-  public boolean isFaceCard() {
+  private boolean isFaceCard() {
     return faceValue >= 11 && faceValue <= 13;
   }
 }

@@ -2,16 +2,14 @@ package chapter15.philosophers;
 
 /**
  * Prioritized philosopher
- *
+ * <p>
  * Attempts to pick up a chopstick with lower priority, i.e. the left one.
- *
- * Created by akhalikov on 17/02/16
  */
-public class PriorityPhilosopher extends Philosopher {
+class PriorityPhilosopher extends Philosopher {
 
-  public PriorityPhilosopher(int index,
-                             PriorityChopstick left,
-                             PriorityChopstick right) {
+  PriorityPhilosopher(int index,
+                      PriorityChopstick left,
+                      PriorityChopstick right) {
     this.index = index;
     if (left.getPriority() < right.getPriority()) {
       this.left = left;

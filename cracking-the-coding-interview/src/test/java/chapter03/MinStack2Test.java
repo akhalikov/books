@@ -4,13 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link MinStack2}
- *
- * @author akhalikov
- */
 public class MinStack2Test {
-
   @Test
   public void testMin() throws Exception {
     MinStack2 stack = new MinStack2();

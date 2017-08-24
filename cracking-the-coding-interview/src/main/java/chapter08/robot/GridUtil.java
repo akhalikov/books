@@ -3,7 +3,7 @@ package chapter08.robot;
 /**
  * Created by akhalikov on 22/02/16
  */
-public class GridUtil {
+class GridUtil {
 
   static boolean[][] createGrid(int rows, int cols) {
     boolean[][] grid = new boolean[rows][cols];

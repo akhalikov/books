@@ -23,21 +23,19 @@ public abstract class CDPlayer {
     return cd == null && playlist.isEmpty();
   }
 
-  /** Getters and Setters **/
-
-  public Playlist getPlaylist() {
+  Playlist getPlaylist() {
     return playlist;
   }
 
-  public void setPlaylist(Playlist playlist) {
+  void setPlaylist(Playlist playlist) {
     this.playlist = playlist;
   }
 
-  public CD getCd() {
+  CD getCd() {
     return cd;
   }
 
-  public void setCd(CD cd) {
+  void setCd(CD cd) {
     this.cd = cd;
   }
 }

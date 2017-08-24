@@ -1,6 +1,7 @@
 package chapter01.strings;
 
-import java.util.Arrays;
+import static java.util.Arrays.sort;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,47 +30,40 @@ class PermutationCheck {
    * Time: O(n log(n)), space: O(n)
    */
   static boolean isPermutation(String str1, String str2) {
-    if (str1.length() != str2.length())
-      return false;
-    char[] chars1 = str1.toCharArray();
-    char[] chars2 = str2.toCharArray();
-    Arrays.sort(chars1);
-    Arrays.sort(chars2);
-    return Arrays.equals(chars1, chars2);
+    return str1 != null
+      && str2 != null
+      && str1.length() == str2.length()
+      && sortStr(str1).equals(sortStr(str2));
   }
 
   /**
-   * Assumptions: unicode charset, case sensitive, non-null args, time complexity <= O(n);
-   * Solve the problem making count of characters in HashMap
+   * Assumptions:
+   *  - unicode charset
+   *  - case sensitive
+   *  - non-null args
    *
    * Time = O(n), space = O(n)
    */
   static boolean isPermutation2(String str1, String str2) {
-    if (str1.length() != str2.length())
+    if (str1 == null || str2 == null
+      || str1.length() != str2.length()) {
       return false;
-
-    // count 1st string
-    final Map<Character, Integer> charMap1 = new HashMap<>();
+    }
+    final Map<Character, Integer> charMap = new HashMap<>();
     for (char c: str1.toCharArray()) {
-      charMap1.put(c, getCharCount(charMap1, c));
+      charMap.put(c, getCharCount(charMap, c));
     }
-
-    // count 2nd string
-    final Map<Character, Integer> charMap2 = new HashMap<>();
     for (char c: str2.toCharArray()) {
-      charMap2.put(c, getCharCount(charMap2, c));
-    }
-
-    // compare character counts
-    for (Map.Entry<Character, Integer> entry: charMap1.entrySet()) {
-      if (charMap2.get(entry.getKey()) != entry.getValue())
+      if (!charMap.containsKey(c) || charMap.get(c) < 0) {
         return false;
+      }
+      charMap.put(c, charMap.get(c)-1);
     }
     return true;
   }
 
   private static int getCharCount(Map<Character, Integer> charMap, char c) {
-    return charMap.get(c) != null ? charMap.get(c)+1 : 1;
+    return charMap.get(c) != null ? charMap.get(c) + 1 : 1;
   }
 
   /**
@@ -79,21 +73,26 @@ class PermutationCheck {
    * Time = O(n), space = O(n)
    */
   static boolean isPermutation3(String str1, String str2) {
-    if (str1.length() != str2.length())
+    if (str1 == null || str2 == null
+      || str1.length() != str2.length()) {
       return false;
-
-    // count letters in str1
+    }
     int[] letters = new int[256];
     for (char c: str1.toCharArray()) {
       letters[c]++;
     }
-
-    // subtract count(str1) - count(str2)
     for (char c: str2.toCharArray()) {
       letters[c]--;
-      if (letters[c] < 0)
+      if (letters[c] < 0) {
         return false;
+      }
     }
     return true;
+  }
+
+  private static String sortStr(String s) {
+    char[] chars = s.toCharArray();
+    sort(chars);
+    return new String(chars);
   }
 }

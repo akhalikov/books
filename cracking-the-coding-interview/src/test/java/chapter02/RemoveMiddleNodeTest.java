@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link RemoveMiddleNode}
- *
- * @author ahalikov
- */
 public class RemoveMiddleNodeTest {
   @Test
   public void testRemoveNode1() throws Exception {

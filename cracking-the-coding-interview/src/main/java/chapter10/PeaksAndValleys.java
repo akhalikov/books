@@ -10,7 +10,8 @@ package chapter10;
  *
  * Created by artur on 20.01.16.
  */
-public class PeaksAndValleys {
+class PeaksAndValleys {
+
   static void sortPeakValleys(int[] array) {
     if (array == null)
       throw new NullPointerException("array is null");

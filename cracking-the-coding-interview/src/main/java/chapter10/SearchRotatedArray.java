@@ -4,10 +4,8 @@ package chapter10;
  * Given a sorted array of n integers that has been rotated an unknown number of times,
  * write code to find an element in the array.
  * You may assume that the array was originally sorted in increasing order.
- *
- * @author ahalikov
  */
-public class SearchRotatedArray {
+class SearchRotatedArray {
   /**
    * Time complexity: O(log n)
    * @param a array of integers
@@ -15,21 +13,23 @@ public class SearchRotatedArray {
    * @return index of element if found, otherwise -1
    */
   static int search(int[] a, int x) {
-    if (a == null)
+    if (a == null) {
       throw new NullPointerException("array is null");
-    if (a.length == 0)
+    }
+    if (a.length == 0) {
       return -1;
+    }
     return search(a, 0, a.length-1, x);
   }
 
   static int search(int[] a, int lo, int hi, int x) {
-    if (hi < lo)
+    if (hi < lo) {
       return -1;
-
+    }
     int mid = (lo + hi) / 2;
-    if (x == a[mid])
+    if (x == a[mid]) {
       return mid;
-
+    }
     if (a[lo] < a[mid]) {
       // search left part
       if (x >= a[lo] && x < a[mid])

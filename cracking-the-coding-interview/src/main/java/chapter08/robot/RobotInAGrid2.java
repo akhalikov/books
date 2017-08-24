@@ -26,7 +26,7 @@ public class RobotInAGrid2 {
       getPath(grid, lastRow, lastCol, path) ? path : null;
   }
 
-  static boolean getPath(boolean[][] grid, int row, int col, List<Point> path) {
+  private static boolean getPath(boolean[][] grid, int row, int col, List<Point> path) {
     if (col < 0 || row < 0 || !grid[row][col])
       return false;
 

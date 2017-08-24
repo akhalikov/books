@@ -3,11 +3,6 @@ package chapter04.buildorder;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Project class
- *
- * Created by akhalikov on 11/03/16
- */
 public class Project {
   String name;
   List<Project> dependencies = new ArrayList<>();
@@ -22,7 +17,7 @@ public class Project {
       this.dependencies.add(project);
   }
 
-  public void addDependency(Project project) {
+  void addDependency(Project project) {
     dependencies.add(project);
   }
 

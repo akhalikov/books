@@ -17,10 +17,9 @@ import java.util.LinkedList;
  * 2 chunks: thousand
  * 3 chunks: million
  * 4 chunks: billion
- *
- * Created by akhalikov on 05/03/16
  */
-public class EnglishInt {
+class EnglishInt {
+
   private static final String negative = "minus";
   private static final String[] smalls = {
     "zero", "one", "two", "three", "four", "five",

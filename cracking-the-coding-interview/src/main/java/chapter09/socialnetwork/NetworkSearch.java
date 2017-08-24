@@ -4,10 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by akhalikov on 03/03/16
- */
-public class NetworkSearch {
+class NetworkSearch {
   LinkedList<Person> findPathBiBFS(Map<Integer, Person> people,
                                    int source, int dest) {
     BFSData sourceData = new BFSData(people.get(source));
@@ -29,8 +26,8 @@ public class NetworkSearch {
   /**
    * Search one level and return collision if any
    */
-  Person searchLevel(Map<Integer, Person> people,
-                     BFSData primary, BFSData secondary) {
+  private Person searchLevel(Map<Integer, Person> people,
+                             BFSData primary, BFSData secondary) {
     int count = primary.toVisit.size();
     for (int i = 0; i < count; i++) {
       PathNode pathNode = primary.toVisit.poll();
@@ -55,7 +52,7 @@ public class NetworkSearch {
     return null;
   }
 
-  LinkedList<Person> mergePaths(BFSData bfs1, BFSData bfs2, int connection) {
+  private LinkedList<Person> mergePaths(BFSData bfs1, BFSData bfs2, int connection) {
     PathNode end1 = bfs1.visited.get(connection); // end1 -> source
     PathNode end2 = bfs2.visited.get(connection); // end2 -> dest
     LinkedList<Person> path1 = end1.collapse(false);

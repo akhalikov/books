@@ -8,44 +8,46 @@ package chapter10;
  *
  * Input: ball, {"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""}
  * Output: 4
- *
- * Created by artur on 20.01.16.
  */
-public class SearchSparceArray {
+class SearchSparceArray {
   static int search(String[] arr, String x) {
-    if (arr == null)
+    if (arr == null) {
       throw new NullPointerException("arr is null");
-    if (x == null)
+    }
+    if (x == null) {
       throw new NullPointerException("x is null");
-    if (arr.length == 0)
+    }
+    if (arr.length == 0) {
       return -1;
+    }
     return search(arr, 0, arr.length-1, x);
   }
 
   private static int search(String[] arr, int lo, int hi, String x) {
     int mid = (lo + hi) / 2;
-    if (hi < lo)
+    if (hi < lo) {
       return -1;
-
+    }
     if ("".equals(arr[mid])) {
       mid = shiftMid(arr, lo, mid, hi);
       if (mid == -1)
         return -1;
     }
-    if (x.equals(arr[mid]))
+    if (x.equals(arr[mid])) {
       return mid;
-    else if (x.compareTo(arr[mid]) < 0)
+    } else if (x.compareTo(arr[mid]) < 0) {
       return search(arr, 0, mid - 1, x);
-    else
+    } else {
       return search(arr, mid + 1, hi, x);
+    }
   }
 
   private static int shiftMid(String[] arr, int lo, int mid, int hi) {
     int left = mid - 1, right = mid + 1;
     while (true) {
-      if (left < lo && right > hi)
+      if (left < lo && right > hi) {
         return -1;
-      else if (left >= lo && !"".equals(arr[left])) {
+      } else if (left >= lo && !"".equals(arr[left])) {
         mid = left;
         break;
       }

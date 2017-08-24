@@ -5,9 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static chapter01.ArrayPairSum.*;
 
-/**
- * @author ahalikov
- */
 public class ArrayPairSumTest {
   @Test(expected = IllegalArgumentException.class)
   public void testFindPairsCornerCase1() {

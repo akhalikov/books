@@ -14,8 +14,6 @@ import algo.stack.Stack;
  *
  *  - MinStack class inherits from LinkedStack
  *  - min elements are tracked by another minStack
- *
- * @author akhalikov
  */
 public class MinStack2 extends LinkedStack<Integer> {
   /**

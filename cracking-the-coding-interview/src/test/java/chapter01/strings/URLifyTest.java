@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Test for {@link URLify}
- *
- * @author akhalikov
- */
 public class URLifyTest {
 
   @Test

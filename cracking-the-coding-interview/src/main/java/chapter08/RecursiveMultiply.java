@@ -5,8 +5,6 @@ package chapter08;
  * without using the * operator.
  * You can use +, -, and bit shifting,
  * but you should minimise the number of those operations.
- *
- * Created by akhalikov on 08/03/16
  */
 public class RecursiveMultiply {
   /**

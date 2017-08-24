@@ -8,18 +8,16 @@ import java.util.List;
  * Given a binary tree, design an algorithm which creates a linked list
  * of all nodes at each depth.
  * E.g. if you have a tree with depth (height) D, you will have D linked lists.
- *
- * @author akhalikov
  */
-public class ListOfDepths {
+class ListOfDepths {
   static List<LinkedList<TreeNode>> getListOfDepths(TreeNode root) {
-    final List<LinkedList<TreeNode>> lists = new ArrayList();
+    final List<LinkedList<TreeNode>> lists = new ArrayList<>();
     createListForLevel(root, 0, lists);
     return lists;
   }
 
-  static void createListForLevel(TreeNode node, int level,
-                                 List<LinkedList<TreeNode>> lists) {
+  private static void createListForLevel(TreeNode node, int level,
+                                         List<LinkedList<TreeNode>> lists) {
     if (node == null)
       return;
 

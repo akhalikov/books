@@ -9,11 +9,12 @@ import chapter02.LinkedList.Node;
  * Example: node c from a->b->c->d->e->f
  * Result: nothing is returned, but the linked list look like: a->b->d->e->f
  */
-public class RemoveMiddleNode {
+class RemoveMiddleNode {
 
   static void remove(Node n) {
-    if (n == null || n.next == null)
+    if (n == null || n.next == null) {
       throw new IllegalArgumentException("n is null or not in the middle");
+    }
 
     Node next = n.next;
     n.data = next.data;

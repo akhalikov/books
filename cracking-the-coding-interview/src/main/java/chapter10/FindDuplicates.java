@@ -12,16 +12,13 @@ import java.util.BitSet;
  * integer = 4 bytes = 32 bits
  * Q: How many integers do I need to index numbers <= 32,000 ?
  * A: 32000 / 32 = 1000
- *
- * Created by artur on 20.01.16.
  */
-public class FindDuplicates {
-  static final int N = 32000;
+class FindDuplicates {
+  private static final int N = 32000;
 
   static void printDuplicates(int[] arr) {
     algo.structures.BitSet bs = new algo.structures.BitSet(N);
-    for (int i = 0; i < arr.length; i++) {
-      int val = arr[i];
+    for (int val : arr) {
       int val0 = val - 1; // numbers start from 1, bitset starts from 0
       if (bs.get(val0))
         System.out.print(val + " ");
@@ -33,12 +30,10 @@ public class FindDuplicates {
 
   /**
    * Using java.util.BitSet
-   * @param arr
    */
   static void printDuplicates2(int[] arr) {
     BitSet bs = new BitSet();
-    for (int i = 0; i < arr.length; i++) {
-      int val = arr[i];
+    for (int val : arr) {
       int val0 = val - 1; // numbers start from 1, bitset starts from 0
       if (bs.get(val0))
         System.out.print(val + " ");

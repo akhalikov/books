@@ -1,13 +1,8 @@
 package chapter15.philosophers;
 
-/**
- * Created by akhalikov on 16/02/16
- */
 public class LazyPhilosopher extends Philosopher {
 
-  private int bitesRemained = BITES_NUM;
-
-  public LazyPhilosopher(int index, Chopstick left, Chopstick right) {
+  LazyPhilosopher(int index, Chopstick left, Chopstick right) {
     super(index, left, right);
   }
 

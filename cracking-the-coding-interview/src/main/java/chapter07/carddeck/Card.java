@@ -11,11 +11,11 @@ public abstract class Card {
    *     13 for King,
    *     15 for Ace.
    */
-  protected int faceValue;
+  int faceValue;
 
-  protected Suit suit;
+  private Suit suit;
 
-  public Card(int faceValue, Suit suit) {
+  Card(int faceValue, Suit suit) {
     this.faceValue = faceValue;
     this.suit = suit;
   }

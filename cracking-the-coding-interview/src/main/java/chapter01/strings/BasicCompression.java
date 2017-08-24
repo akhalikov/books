@@ -8,10 +8,8 @@ package chapter01.strings;
  * return the original string.
  *
  * String has only uppercase and lowercase letters.
- *
- * @author akhalikov
  */
-public class BasicCompression {
+class BasicCompression {
 
   static String compress(String str) {
     if (str == null)

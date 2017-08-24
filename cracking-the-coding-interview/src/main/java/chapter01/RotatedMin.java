@@ -6,6 +6,7 @@ package chapter01;
  * How would you find the minimum element?
  */
 class RotatedMin {
+
   static int find(int[] sorted) {
     int lo = 0, hi = sorted.length, mid = 0;
     int first = sorted[lo];

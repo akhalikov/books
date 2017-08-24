@@ -2,9 +2,6 @@ package chapter08.robot;
 
 import org.junit.Test;
 
-/**
- * Test for {@link RobotInAGrid1}
- */
 public class RobotInAGrid1Test {
   @Test
   public void testFindPath() {

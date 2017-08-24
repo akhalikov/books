@@ -2,11 +2,6 @@ package chapter07.jukebox;
 
 import java.util.Set;
 
-/**
- * Jukebox model
- *
- * Created by akhalikov on 23/03/16
- */
 public class Jukebox {
 
   private CDPlayer cdPlayer;

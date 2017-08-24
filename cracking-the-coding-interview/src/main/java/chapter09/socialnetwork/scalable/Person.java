@@ -3,9 +3,6 @@ package chapter09.socialnetwork.scalable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by akhalikov on 03/03/16
- */
 public class Person {
   private List<Integer> friends = new ArrayList<>();
   private int personId;

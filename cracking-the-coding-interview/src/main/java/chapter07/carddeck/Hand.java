@@ -3,7 +3,7 @@ package chapter07.carddeck;
 import java.util.ArrayList;
 
 public class Hand<T extends Card> {
-  protected ArrayList<T> cards = new ArrayList<>();
+  private ArrayList<T> cards = new ArrayList<>();
 
   public int score() {
     int score = 0;

@@ -3,11 +3,6 @@ package chapter01;
 import org.junit.Test;
 import com.ahalikov.toolkit.utils.ArrayUtils;
 
-/**
- * Test for {@link ZeroMatrix}
- *
- * @author ahalikov
- */
 public class ZeroMatrixTest {
   @Test
   public void testProcess1() throws Exception {

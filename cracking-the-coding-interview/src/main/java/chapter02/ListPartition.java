@@ -16,19 +16,17 @@ import chapter02.LinkedList.Node;
  *
  * Output:
  * 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
- *
- * @author akhalikov
  */
-public class ListPartition {
+class ListPartition {
   /**
    * Just put bigger items to the end of the list, smaller to the head.
    * @param Node
    * @return Head Node of partitioned list
    */
   static Node partition(Node Node, int pivot) {
-    if (Node == null)
+    if (Node == null) {
       throw new NullPointerException("List is null");
-
+    }
     Node head = Node, tail = Node;
     while (Node != null) {
       Node next = Node.next;

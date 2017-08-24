@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link NthToTheLast}
- *
- * @author ahalikov
- */
 public class NthToTheLastTest {
   @Test
   public void testFind() throws Exception {

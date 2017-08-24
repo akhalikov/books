@@ -13,8 +13,6 @@ package chapter10;
  * getRankOfNumber(1) = 0
  * getRankOfNumber(3) = 1
  * getRankOfNumber(4) = 3
- *
- * Created by artur on 20.01.16.
  */
 public class RankFromStream {
 }
