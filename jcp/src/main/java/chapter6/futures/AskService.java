@@ -1,7 +1,7 @@
 package chapter6.futures;
 
+import static com.ahalikov.toolkit.threads.ThreadHelper.clog;
 import static java.lang.Thread.currentThread;
-import static toolkit.utils.ConsoleLogger.log;
 
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
@@ -11,17 +11,17 @@ class AskService {
   private static final Random RAND = new Random();
 
   static CompletableFuture<Integer> getRandomNumber(String id, int execTimeSec) {
-    log(id);
+    clog(id);
 
     final CompletableFuture<Integer> future = new CompletableFuture<>();
 
     Thread t = new Thread(() -> {
       try {
-        log(id + " sleep " + execTimeSec + " sec");
+        clog(id + " sleep " + execTimeSec + " sec");
         TimeUnit.SECONDS.sleep(execTimeSec);
 
         int number = RAND.nextInt(200);
-        log(id + " generated random=" + number);
+        clog(id + " generated random=" + number);
 
         future.complete(number);
 
@@ -36,17 +36,17 @@ class AskService {
   }
 
   static CompletableFuture<Integer> addRandom(int value, String id, int execTimeSec) {
-    log(id);
+    clog(id);
 
     final CompletableFuture<Integer> future = new CompletableFuture<>();
 
     Thread t = new Thread(() -> {
       try {
-        log(id + " sleep " + execTimeSec + " sec");
+        clog(id + " sleep " + execTimeSec + " sec");
         TimeUnit.SECONDS.sleep(execTimeSec);
 
         int randomNumber = RAND.nextInt(200);
-        log(id + " generated random=" + randomNumber);
+        clog(id + " generated random=" + randomNumber);
 
         future.complete(value + randomNumber);
 

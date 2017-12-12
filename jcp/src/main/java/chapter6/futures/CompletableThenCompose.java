@@ -2,7 +2,7 @@ package chapter6.futures;
 
 import static chapter6.futures.AskService.addRandom;
 import static chapter6.futures.AskService.getRandomNumber;
-import static toolkit.utils.ConsoleLogger.log;
+import static com.ahalikov.toolkit.threads.ThreadHelper.clog;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -36,7 +36,7 @@ class CompletableThenCompose {
   }
 
   private static int callback(int v) {
-    log("callback");
+    clog("callback");
     return v + 1;
   }
 }

@@ -1,7 +1,7 @@
 package chapter6.futures;
 
 import static chapter6.futures.AskService.getRandomNumber;
-import static toolkit.utils.ConsoleLogger.log;
+import static com.ahalikov.toolkit.threads.ThreadHelper.clog;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -11,16 +11,16 @@ import java.util.concurrent.CompletableFuture;
 class CompletableThenApply {
 
   public static void main(String[] args) throws Exception {
-    log("main");
+    clog("main");
 
     CompletableFuture<Integer> future = getRandomNumber("random number", 5)
             .thenApply(CompletableThenApply::callback); // apply will be executed in the same thread as `getRandomNumber`
 
-    log("result=" + future.get());
+    clog("result=" + future.get());
   }
 
   private static int callback(int value) {
-    log("callback");
+    clog("callback");
     return value + 42;
   }
 }
