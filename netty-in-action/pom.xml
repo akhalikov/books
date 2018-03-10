@@ -3,29 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.akhalikov</groupId>
-        <artifactId>books</artifactId>
-        <version>1</version>
-    </parent>
-    <artifactId>netty-in-action</artifactId>
-    <name>netty-in-action</name>
-    <version>1</version>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <groupId>com.akhalikov.books</groupId>
+    <artifactId>netty-in-action</artifactId>
+    <version>1</version>
 
     <properties>
         <npn.version>1.1.0.v20120525</npn.version>
         <npn.boot.version>1.1.10.v20150130</npn.boot.version>
         <netty.version>4.0.25.Final</netty.version>
     </properties>
+
+    <build>
+        <plugins>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                   <source>1.8</source>
+                   <target>1.8</target>
+               </configuration>
+           </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
