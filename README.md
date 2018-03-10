@@ -9,6 +9,7 @@
 
 #### Java 
 
+* jvm-concurrency: Programming Concurrency on the JVM (https://www.amazon.com/Programming-Concurrency-JVM-Mastering-Synchronization/dp/193435676X)
 * effective-java: Effective Java 2nd Edition, by Joshua Bloch (https://www.manning.com/books/functional-programming-in-scala)
 * java8-for-impatient: [Java SE 8 for the Really Impatient by Cay Horstmann](http://horstmann.com/java8/)
 * jcp: [Java Concurrency in Practice by Brian Goetz](http://jcip.net/)
