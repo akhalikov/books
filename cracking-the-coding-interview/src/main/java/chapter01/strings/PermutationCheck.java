@@ -54,10 +54,13 @@ class PermutationCheck {
       charMap.put(c, getCharCount(charMap, c));
     }
     for (char c: str2.toCharArray()) {
-      if (!charMap.containsKey(c) || charMap.get(c) < 0) {
+      if (!charMap.containsKey(c)) {
         return false;
       }
       charMap.put(c, charMap.get(c)-1);
+      if (charMap.get(c) < 0) {
+        return false;
+      }
     }
     return true;
   }

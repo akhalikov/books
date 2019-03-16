@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 public class PermutationCheckTest {
   @Test
-  public void testIsPermutation() throws Exception {
+  public void testIsPermutation() {
     assertTrue(isPermutation("abc", "bca"));
     assertTrue(isPermutation("abc", "cab"));
     assertTrue(isPermutation("abc", "cba"));
@@ -32,7 +32,7 @@ public class PermutationCheckTest {
   }
 
   @Test
-  public void testIsPermutation2() throws Exception {
+  public void testIsPermutation2() {
     assertTrue(isPermutation2("abc", "bca"));
     assertTrue(isPermutation2("abc", "cab"));
     assertTrue(isPermutation2("abc", "cba"));
@@ -41,6 +41,7 @@ public class PermutationCheckTest {
     assertTrue(isPermutation2("aabTT", "TabTa"));
 
     assertFalse(isPermutation2("abc", ""));
+    assertFalse(isPermutation2("bab", "aab"));
 
     // Case sensitive permutation
     assertFalse(isPermutation2("abc", "bCa"));
@@ -54,7 +55,7 @@ public class PermutationCheckTest {
   }
 
   @Test
-  public void testIsPermutation3() throws Exception {
+  public void testIsPermutation3() {
     assertTrue(isPermutation3("abc", "bca"));
     assertTrue(isPermutation3("abc", "cab"));
     assertTrue(isPermutation3("abc", "cba"));
