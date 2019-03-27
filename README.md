@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/31823a22ad7b4054b57b32455adb3e9f)](https://www.codacy.com/app/akhalikov/books?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akhalikov/books&amp;utm_campaign=Badge_Grade)
+
 ### Source code and notes from books
 
 #### Scala
