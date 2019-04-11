@@ -1,32 +1,48 @@
 package chapter04.buildorder;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Project {
-  String name;
-  List<Project> dependencies = new ArrayList<>();
+class Project {
+  private final String name;
+  private final Map<String, Project> dependencies = new HashMap<>();
+  private State state = State.BLANK;
 
-  public Project(String name) {
+  Project(String name) {
     this.name = name;
-  }
-
-  public Project(String name, Project...dependencies) {
-    this.name = name;
-    for (Project project: dependencies)
-      this.dependencies.add(project);
   }
 
   void addDependency(Project project) {
-    dependencies.add(project);
+    dependencies.put(project.name, project);
   }
 
-  public List<Project> getDependencies() {
-    return dependencies;
+  String getName() {
+    return name;
+  }
+
+  Project[] getDependencies() {
+    return dependencies.values().toArray(new Project[0]);
+  }
+
+  State getState() {
+    return state;
+  }
+
+  void setState(State state) {
+    this.state = state;
   }
 
   @Override
   public String toString() {
-    return "Project(" + name + ")";
+    return "Project{" +
+        "name='" + name + '\'' +
+        ", dependencies=" + dependencies +
+        '}';
+  }
+
+  enum State {
+    BLANK,
+    PARTIAL,
+    COMPLETED
   }
 }
