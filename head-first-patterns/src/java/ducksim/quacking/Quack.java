@@ -2,9 +2,6 @@ package ducksim.quacking;
 
 import ducksim.ducks.Duck;
 
-/**
- * @author ahalikov
- */
 public class Quack implements QuackBehavior {
 
     @Override

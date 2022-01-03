@@ -3,11 +3,6 @@ package ducksim.ducks;
 import ducksim.flying.FlyNoWay;
 import ducksim.quacking.Squeak;
 
-/**
- * A rubber duck class
- *
- * @author ahalikov
- */
 public class RubberDuck extends Duck {
 
     public RubberDuck() {

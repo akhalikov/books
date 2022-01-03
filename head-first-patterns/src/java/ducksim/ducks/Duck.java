@@ -3,11 +3,6 @@ package ducksim.ducks;
 import ducksim.flying.FlyBehavior;
 import ducksim.quacking.QuackBehavior;
 
-/**
- * A duck class
- *
- * @author ahalikov
- */
 public abstract class Duck {
 
     protected FlyBehavior flyBehavior;

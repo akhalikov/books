@@ -3,9 +3,6 @@ package ducksim.ducks;
 import ducksim.flying.FlyWithWings;
 import ducksim.quacking.Quack;
 
-/**
- * @author ahalikov
- */
 public class MallardDuck extends Duck {
 
     public MallardDuck() {

@@ -2,9 +2,6 @@ package ducksim.flying;
 
 import ducksim.ducks.Duck;
 
-/**
- * @author ahalikov
- */
 public class FlyNoWay implements FlyBehavior {
 
     @Override

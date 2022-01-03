@@ -10,18 +10,17 @@ import ducksim.quacking.Quack;
  *
  * This is a dynamic version meaning that we can change duck behavior in run-time.
  *
- * @author ahalikov
  */
 public class DynamicDuckSimDemo {
 
     public static void main(String[] args) {
 
         // Default behavior
-        Duck duck1 = new MallardDuck();
+        final var duck1 = new MallardDuck();
         duck1.performFly();
         duck1.performQuack();
 
-        Duck duck2 = new RubberDuck();
+        final var duck2 = new RubberDuck();
         duck2.performFly();
         duck2.performQuack();
 
