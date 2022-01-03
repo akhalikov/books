@@ -1,10 +1,18 @@
-*.iml
-.idea/
-out/
-target/
-
 *.class
 *.jar
 .DS_Store
 
 *.pyc
+git-author-rewrite.sh
+
+# Ignore IntellijIdea-specific files and directories
+*.iml
+.idea/
+out/
+target/
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
