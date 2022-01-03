@@ -1,52 +1,54 @@
 package chapter01;
 
-import com.ahalikov.toolkit.utils.ArrayUtils;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static chapter01.MatrixRotation.rotate;
+import static chapter01.MatrixRotation.rotateInPlace;
+import static toolkit.utils.ArrayUtils.print;
 
 public class MatrixRotationTest {
-  @Test
-  public void testRotate() throws Exception {
-    System.out.println("Test rotate()");
-    int[][] matrix = {
-      {0, 1, 1, 3},
-      {3, 2, 10, 11},
-      {-4, 0, 0, 0},
-      {2, 2, 1, -9}
-    };
-    ArrayUtils.print(matrix);
 
-    System.out.println("Rotated:");
-    int[][] result = MatrixRotation.rotate(matrix);
-    ArrayUtils.print(result);
-  }
+    @Test
+    public void testRotate() {
+        System.out.println("Test rotate()");
+        var matrix = new int[][]{
+            {0, 1, 1, 3},
+            {3, 2, 10, 11},
+            {-4, 0, 0, 0},
+            {2, 2, 1, -9}
+        };
+        print(matrix);
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testRotateEmptyMatrix() throws Exception {
-    int[][] matrix = {};
-    MatrixRotation.rotate(matrix);
-  }
+        System.out.println("Rotated:");
+        var result = rotate(matrix);
+        print(result);
+    }
 
-  @Test
-  public void testRotateInPlace() throws Exception {
-    System.out.println("Test rotateInPlace()");
-    int[][] matrix = {
-      {0, 1, 1, 3},
-      {3, 2, 10, 11},
-      {-4, 0, 0, 0},
-      {2, 2, 1, -9}
-    };
-    ArrayUtils.print(matrix);
+    @Test(expected = IllegalArgumentException.class)
+    public void testRotateEmptyMatrix() {
+        int[][] matrix = {};
+        rotate(matrix);
+    }
 
-    System.out.println("Rotated:");
-    MatrixRotation.rotateInPlace(matrix);
-    ArrayUtils.print(matrix);
-  }
+    @Test
+    public void testRotateInPlace() {
+        System.out.println("Test rotateInPlace()");
+        var matrix = new int[][]{
+            {0, 1, 1, 3},
+            {3, 2, 10, 11},
+            {-4, 0, 0, 0},
+            {2, 2, 1, -9}
+        };
+        print(matrix);
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testRotateInPlaceEmptyMatrix() throws Exception {
-    int[][] matrix = {};
-    MatrixRotation.rotate(matrix);
-  }
+        System.out.println("Rotated:");
+        rotateInPlace(matrix);
+        print(matrix);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testRotateInPlaceEmptyMatrix() {
+        int[][] matrix = {};
+        rotate(matrix);
+    }
 }

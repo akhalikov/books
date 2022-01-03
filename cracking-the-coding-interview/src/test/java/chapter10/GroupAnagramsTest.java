@@ -1,29 +1,39 @@
 package chapter10;
 
-import static com.ahalikov.toolkit.utils.ArrayUtils.print;
 import org.junit.Test;
-import com.ahalikov.toolkit.utils.ArrayUtils;
 
-import static org.junit.Assert.*;
+import static chapter10.GroupAnagrams.sort;
+import static chapter10.GroupAnagrams.sort2;
+import static org.junit.Assert.assertArrayEquals;
+import static toolkit.utils.ArrayUtils.print;
 
 public class GroupAnagramsTest {
-  @Test
-  public void testSort() throws Exception {
-    System.out.println("testSort");
-    String[] actual = new String[]{"abab", "Google", "Amazon", "Moo", "abba", "baba"};
-    GroupAnagrams.sort(actual);
-    print(actual);
-    assertArrayEquals(
-      new String[]{"abab", "abba", "baba", "Amazon", "Google", "Moo"},
-      actual
-    );
-  }
 
-  @Test
-  public void testSort2() throws Exception {
-    System.out.println("testSort2");
-    String[] actual = new String[]{"abab", "Google", "Amazon", "Microsoft", "abba", "baba"};
-    GroupAnagrams.sort2(actual);
-    print(actual);
-  }
+    @Test
+    public void testSort() {
+        // given
+        var strings = new String[]{"abab", "Google", "Amazon", "Moo", "abba", "baba"};
+
+        // when
+        sort(strings);
+        print(strings);
+
+        // then
+        assertArrayEquals(
+            new String[]{"abab", "abba", "baba", "Amazon", "Google", "Moo"},
+            strings
+        );
+    }
+
+    @Test
+    public void testSort2() {
+        // given
+        var actual = new String[]{"abab", "Google", "Amazon", "Microsoft", "abba", "baba"};
+
+        // when
+        sort2(actual);
+
+        // then
+        print(actual);
+    }
 }

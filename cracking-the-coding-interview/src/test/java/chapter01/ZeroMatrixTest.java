@@ -1,30 +1,48 @@
 package chapter01;
 
 import org.junit.Test;
-import com.ahalikov.toolkit.utils.ArrayUtils;
+
+import static chapter01.ZeroMatrix.makeZeros;
+import static toolkit.utils.ArrayUtils.assertMatrixEquals;
 
 public class ZeroMatrixTest {
-  @Test
-  public void testProcess1() throws Exception {
-    int[][] m = {{1, 2, 3}, {5, 0, 4}, {1, 2, 3}};
-    ZeroMatrix.makeZeros(m);
-    int[][] expect = {{1, 0, 3}, {0, 0, 0}, {1, 0, 3}};
-    ArrayUtils.assertMatrixEquals(expect, m);
-  }
 
-  @Test
-  public void testProcess2() throws Exception {
-    int[][] m = {{1, 2, 3}, {5, 0, 4}, {1, 2, 0}};
-    ZeroMatrix.makeZeros(m);
-    int[][] expect = {{1, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-    ArrayUtils.assertMatrixEquals(expect, m);
-  }
+    @Test
+    public void testProcess1() {
+        // given
+        var matrix = new int[][]{{1, 2, 3}, {5, 0, 4}, {1, 2, 3}};
+        var expect = new int[][]{{1, 0, 3}, {0, 0, 0}, {1, 0, 3}};
 
-  @Test
-  public void testProcess3() throws Exception {
-    int[][] m = {{0, 2}, {4, 0}};
-    ZeroMatrix.makeZeros(m);
-    int[][] expect = {{0, 0}, {0, 0}};
-    ArrayUtils.assertMatrixEquals(expect, m);
-  }
+        // when
+        makeZeros(matrix);
+
+        // then
+        assertMatrixEquals(expect, matrix);
+    }
+
+    @Test
+    public void testProcess2() {
+        // given
+        var matrix = new int[][]{{1, 2, 3}, {5, 0, 4}, {1, 2, 0}};
+        var expect = new int[][]{{1, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+
+        // when
+        makeZeros(matrix);
+
+        // then
+        assertMatrixEquals(expect, matrix);
+    }
+
+    @Test
+    public void testProcess3() {
+        // given
+        var matrix = new int[][]{{0, 2}, {4, 0}};
+        var expect = new int[][]{{0, 0}, {0, 0}};
+
+        // when
+        makeZeros(matrix);
+
+        // then
+        assertMatrixEquals(expect, matrix);
+    }
 }
