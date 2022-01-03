@@ -6,9 +6,9 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class CountingDuplicateCharsTest {
+class CountingDuplicateCharsStreamBasedTest {
 
-    private final CountingDuplicateChars subj = new CountingDuplicateChars();
+    private final CountingDuplicateCharsStreamBased subj = new CountingDuplicateCharsStreamBased();
 
     @Test
     void simple_test() {
@@ -16,7 +16,7 @@ class CountingDuplicateCharsTest {
         var result = subj.countDuplicates("ababac");
 
         // then
-        assertThat(result).isEqualTo(Map.of('a', 3, 'b', 2, 'c', 1));
+        assertThat(result).isEqualTo(Map.of('a', 3L, 'b', 2L, 'c', 1L));
     }
 
     @Test
@@ -34,6 +34,6 @@ class CountingDuplicateCharsTest {
         var result = subj.countDuplicates("aaaaaaaaaa");
 
         // then
-        assertThat(result).isEqualTo(Map.of('a', 10));
+        assertThat(result).isEqualTo(Map.of('a', 10L));
     }
 }
