@@ -1,3 +1,6 @@
 rootProject.name = 'books'
 
-include 'cracking-the-coding-interview', 'effective-java', 'head-first-patterns', 'java-coding-problems'
+include 'cracking-the-coding-interview',
+        'effective-java',
+        'head-first-patterns',
+        'java-coding-problems'

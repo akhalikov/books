@@ -1,7 +1,7 @@
-package ducksim.ducks;
+package strategy.ducksim.ducks;
 
-import ducksim.flying.FlyBehavior;
-import ducksim.quacking.QuackBehavior;
+import strategy.ducksim.flying.FlyBehavior;
+import strategy.ducksim.quacking.QuackBehavior;
 
 public abstract class Duck {
 

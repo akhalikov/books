@@ -1,7 +1,7 @@
-package ducksim.ducks;
+package strategy.ducksim.ducks;
 
-import ducksim.flying.FlyWithWings;
-import ducksim.quacking.Quack;
+import strategy.ducksim.flying.FlyWithWings;
+import strategy.ducksim.quacking.Quack;
 
 public class MallardDuck extends Duck {
 

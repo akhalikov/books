@@ -1,6 +1,6 @@
-package ducksim.quacking;
+package strategy.ducksim.quacking;
 
-import ducksim.ducks.Duck;
+import strategy.ducksim.ducks.Duck;
 
 public class MuteQuack implements QuackBehavior {
 

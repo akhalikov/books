@@ -1,6 +1,6 @@
-package ducksim.flying;
+package strategy.ducksim.flying;
 
-import ducksim.ducks.Duck;
+import strategy.ducksim.ducks.Duck;
 
 public class FlyWithWings implements FlyBehavior {
 

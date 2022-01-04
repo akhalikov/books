@@ -1,7 +1,7 @@
-package ducksim.ducks;
+package strategy.ducksim.ducks;
 
-import ducksim.flying.FlyNoWay;
-import ducksim.quacking.Squeak;
+import strategy.ducksim.flying.FlyNoWay;
+import strategy.ducksim.quacking.Squeak;
 
 public class RubberDuck extends Duck {
 

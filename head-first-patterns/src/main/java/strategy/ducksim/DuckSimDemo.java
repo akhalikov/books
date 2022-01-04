@@ -1,8 +1,7 @@
-package ducksim;
+package strategy.ducksim;
 
-import ducksim.ducks.Duck;
-import ducksim.ducks.MallardDuck;
-import ducksim.ducks.RubberDuck;
+import strategy.ducksim.ducks.MallardDuck;
+import strategy.ducksim.ducks.RubberDuck;
 
 /**
  * Example of behavior encapsulation on ducks (Pattern Strategy).
